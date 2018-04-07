@@ -1,9 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl class="w600">
+				<dt>美业机构</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">美容培训</a>
+				</dd>
+				<dd>
+					<a data-type="3" class="details-a-click">美发培训</a>
+				</dd>
+				<dd>
+					<a data-type="12" class="details-a-click">美睫培训</a>
+				</dd>
+				<dd>
+					<a data-type="8" class="details-a-click">美甲培训</a>
+				</dd>
+				<dd>
+					<a data-type="26" class="details-a-click">化妆培训</a>
+				</dd>
+				<dd>
+					<a data-type="25" class="details-a-click">纹绣培训</a>
+				</dd>
+				<dd>
+					<a data-type="25" class="details-a-click">足疗培训</a>
+				</dd>
+				<dd>
+					<a data-type="25" class="details-a-click">按摩培训</a>
+				</dd>
+			</dl>
+	
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="hidden-xs">
+			<hr class="hr1" style="padding-top: 10px">
+		</div>
+	</div>
+	<div class="row hidden-xs show-box3-header">
+		<div class=" col-sm-3 col-md-3">
+			学校名字
+		</div>
+		<div class=" col-sm-2 col-md-2" style="padding-left: 8rem;">
+			主要科目
+		</div>
+		<div class=" col-sm-2 col-md-2">
+			所在地址
+		</div>
+		<div class=" col-sm-2 col-md-2">
+			成立时间
+		</div>
+		<div class=" col-sm-2 col-md-2">
+			logo
+		</div>
+	</div>
+	
+
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
 
 
     var showData = function (data) {
         var DETAILS_URL = "/view/data/school.html";
-        var LOGO_URL = "/image/school/";
+        var LOGO_URL = "//meibanglai.com/image/school/";
         var show = document.getElementById("show");
         var row = document.createElement("div");
         row.classList.add("row");
@@ -59,63 +133,26 @@
         var Nc4 = c3.cloneNode(true);
         var Nc5 = c3.cloneNode(true);
 
-        Nc1.append(a1);
-        Nc1.append(head_p);
+        Nc1.appendChild(a1);
+        Nc1.appendChild(head_p);
 
-        Nc2.append(context_p1);
+        Nc2.appendChild(context_p1);
 
-        Nc3.append(context_address);
-        Nc4.append(context_update);
-        Nc5.append(a2);
+        Nc3.appendChild(context_address);
+        Nc4.appendChild(context_update);
+        Nc5.appendChild(a2);
 
         var Nrow = row.cloneNode(true);
-        Nrow.append(Nc1);
-        Nrow.append(Nc2);
-        Nrow.append(Nc3);
-        Nrow.append(Nc4);
-        Nrow.append(Nc5);
+        Nrow.appendChild(Nc1);
+        Nrow.appendChild(Nc2);
+        Nrow.appendChild(Nc3);
+        Nrow.appendChild(Nc4);
+        Nrow.appendChild(Nc5);
 
-        show.append(Nrow);
+        show.appendChild(Nrow);
         show.appendChild(document.createElement("hr"));
     };
 
 
 </script>
-
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="2" class="details-header">培训教学</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-click">培训教学</a></li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="hidden-xs">
-        <hr class="hr1" style="padding-top: 10px">
-    </div>
-</div>
-<div class="row hidden-xs show-box3-header">
-    <div class=" col-sm-3 col-md-3">
-        学校名字
-    </div>
-    <div class=" col-sm-2 col-md-2" style="padding-left: 8rem;">
-        主要科目
-    </div>
-    <div class=" col-sm-2 col-md-2">
-        所在地址
-    </div>
-    <div class=" col-sm-2 col-md-2">
-        成立时间
-    </div>
-    <div class=" col-sm-2 col-md-2">
-        logo
-    </div>
-</div>
-
-<hr>
-<div id="show">
-</div>
+</html>

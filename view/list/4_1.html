@@ -1,10 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl>
+				<dt>美妆资讯</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">美容美妆资讯</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">美容美妆赛事</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	
+
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
     $(document).ready(function () {
         var page = document.getElementById("page");
         if(page != null) page.innerHTML = "";
         a_details_click_showList();
 
-        n = getQueryString("num");
+        n = $.getUrlParam("num");
         n!=null ? ajaxInformation(n) : ajaxInformation(1);
 
     });
@@ -13,7 +45,7 @@
 
     var ajaxInformation = function (num) {
         $.ajax({
-            url: "/data/getInformationList.do",
+            url: "//meibanglai.com/data/getInformationList.do",
             type: "get",
             //async:false,
             data: {
@@ -119,8 +151,8 @@
 
         var br = document.createElement("br");
 
-        show.append(a);
-        show.append(br);
+        show.appendChild(a);
+        show.appendChild(br);
     }
 
 </script>
@@ -134,17 +166,6 @@
         color: black;
     }
 </style>
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="4" class="details-header">美妆资讯</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-click">美妆资讯</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">美妆赛事</a></li>
-        </ul>
-    </div>
-</div>
 
 <div class="row">
     <div class="hidden-xs">
@@ -155,3 +176,4 @@
 <div id="show">
 
 </div>
+</html>

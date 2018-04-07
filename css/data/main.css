@@ -1,0 +1,68 @@
+.w200 {
+	width: 200px;
+}
+
+.w600 {
+	width: 600px;
+}
+
+.fix-box {
+    background-color: #7C2D86;
+    height: 90px;
+    z-index: 888;
+    position: relative;
+}
+
+.fix-box dl {
+	position: relative;
+	float: left;
+	display: inline-block;
+	height: 70px;
+	color: #fff;
+	padding: 6px 0 11px 10px;
+}
+
+.fix-box dl dt {
+	color: #fff;
+	font-size: 12px;
+    font-weight: bold;
+    line-height: 2;
+	
+}
+
+.fix-box dl dd {
+	position: relative;
+	display: inline-block;
+	height: 24px;
+	margin: 1px 5px 0 -5px;
+	padding: 0 5px;
+	line-height: 24px;
+}
+
+.fix-box dl dd a {
+	color: #fff;
+}
+
+.row .w1190 {
+	width: 1190px;
+	margin: 0 auto;
+}
+
+.row .w1190>div {
+	padding: 0;
+}
+
+.row .l-pic {
+	height: 400px;
+	background: url(../../image/title1.jpg) no-repeat;
+}
+
+.row .r-pic {
+	height: 400px;
+	background: url(../../image/570-400.jpg) no-repeat;
+}
+
+.tab-box {
+	width: 190px;
+	height: 200px;
+}

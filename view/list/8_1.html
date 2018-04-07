@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl>
+				<dt>便民服务</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">美容店家</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">装修服务</a>
+				</dd>
+				<dd>
+					<a data-type="3" class="details-a-click">广告制作</a>
+				</dd>
+				<dd>
+					<a data-type="4" class="details-a-click">包材包装</a>
+				</dd>
+				<dd>
+					<a data-type="5" class="details-a-click">代加工</a>
+				</dd>
+			</dl>
+		</div>
+	</div>	
+
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
     //    var DETAILS_URL = "/view/data/"
     var show = document.getElementById("show");
@@ -24,7 +64,7 @@
         a.setAttribute("href", "/view/data/details.html?d="+data.id);
         var h1 = document.createElement("h1");
         h1.innerHTML = data.shop_name;
-        a.append(h1);
+        a.appendChild(h1);
 
         var img = document.createElement("img");
         img.setAttribute("src", data.image_url);
@@ -34,47 +74,33 @@
         var p1 = p.cloneNode(true);
         var p2 = p.cloneNode(true);
         var p3 = p.cloneNode(true);
-        p1.append("地址："+data.address);
-        p2.append("手机："+data.phone);
-        p3.append("营业时间："+data.businessHours);
+        p1.innerHTML="地址："+data.address;
+        p2.innerHTML="手机："+data.phone;
+        p3.innerHTML="营业时间："+data.businessHours;
 
         var Nc1 = c1.cloneNode(true);
         var Nc2 = c2.cloneNode(true);
         var Nc3 = c3.cloneNode(true);
         var Nrow = row.cloneNode(true);
-        Nc3.append(p1);
-        Nc3.append(p2);
-        Nc3.append(p3);
+        Nc3.appendChild(p1);
+        Nc3.appendChild(p2);
+        Nc3.appendChild(p3);
 
-        Nc2.append(img);
+        Nc2.appendChild(img);
 
-        Nc1.append(a);
+        Nc1.appendChild(a);
 
 //        Nrow.setAttribute("href",);
-        Nrow.append(Nc1);
-        Nrow.append(Nc2);
-        Nrow.append(Nc3);
+        Nrow.appendChild(Nc1);
+        Nrow.appendChild(Nc2);
+        Nrow.appendChild(Nc3);
 
-        show.append(Nrow);
+        show.appendChild(Nrow);
         show.appendChild(document.createElement("hr"))
     }
 
 </script>
 
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="8" class="details-header">便民服务</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-click">美容店家</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">装修服务</a></li>
-            <li><a  data-type="3" class="details-a-Nclick">广告制作</a></li>
-            <li><a  data-type="4" class="details-a-Nclick">包材包装</a></li>
-            <li><a  data-type="5" class="details-a-Nclick">代加工</a></li>
-        </ul>
-    </div>
-</div>
 <div class="hidden-xs">
     <hr class="hr1"/>
 </div>
@@ -97,3 +123,4 @@
     <!--</div>-->
     <!--<hr>-->
 </div>
+</html>

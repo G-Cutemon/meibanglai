@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl>
+				<dt>门店转让</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">美业转让</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">其他转让</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
     var DEFAULT_PREFIX = "/view/data/shoptransfer.html";
-    var DEFAULT_IMAGE_URI = "/image/shoptransfer/";
+    var DEFAULT_IMAGE_URI = "//meibanglai.com/image/shoptransfer/";
     var DEFAULT_IMAGE = DEFAULT_IMAGE_URI+"default.png";
 
     var show = document.getElementById("show");
@@ -54,7 +85,7 @@
         var p3 = p.cloneNode(true);
         var span1 = span.cloneNode(true);
         span1.innerHTML = "转让费："+data.transfer_gold;
-        p3.append(span1);
+        p3.appendChild(span1);
 
         var p4 = p.cloneNode(true);
         p4.innerHTML = data.type;
@@ -74,35 +105,35 @@
         var Nc5 = c4.cloneNode(true);
         var Nc6 = c5.cloneNode(true);
 
-        Nc1.append(img1);
+        Nc1.appendChild(img1);
 
-        Nc2.append(h1_1);
-        Nc2.append(p1);
+        Nc2.appendChild(h1_1);
+        Nc2.appendChild(p1);
 
-        Nc3.append(p2);
-        Nc3.append(p3);
+        Nc3.appendChild(p2);
+        Nc3.appendChild(p3);
 
-        Nc4.append(p4);
+        Nc4.appendChild(p4);
 
-        Nc5.append(p5);
+        Nc5.appendChild(p5);
 
-        Nc6.append(button);
+        Nc6.appendChild(button);
 
 
         var Nrow = row.cloneNode(true);
-        Nrow.append(Nc1);
-        Nrow.append(Nc2);
-        Nrow.append(Nc3);
-        Nrow.append(Nc4);
-        Nrow.append(Nc5);
-        Nrow.append(Nc6);
+        Nrow.appendChild(Nc1);
+        Nrow.appendChild(Nc2);
+        Nrow.appendChild(Nc3);
+        Nrow.appendChild(Nc4);
+        Nrow.appendChild(Nc5);
+        Nrow.appendChild(Nc6);
 
 //        var href = document.createElement("a");
 //        href.setAttribute("href",DEFAULT_PREFIX+"?d="+data.id);
 
 //        href.append(Nrow);
 //        show.append(href);
-        show.append(Nrow);
+        show.appendChild(Nrow);
         show.appendChild(document.createElement("hr"));
     };
 
@@ -166,3 +197,4 @@
     <!--</div>-->
     <!--<hr>-->
 </div>
+</html>

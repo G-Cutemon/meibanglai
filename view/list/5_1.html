@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl>
+				<dt>店家招聘</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">本地招聘信息</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">本地求职信息</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	
+
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
     var DETAIL_PREFIX = "/view/data/invitation.html";
 
@@ -60,50 +92,38 @@
         var Nc4 = c3.cloneNode(true);
         var Nc5 = c3.cloneNode(true);
 
-        Nc1.append(h1);
-        Nc1.append(head_p);
+        Nc1.appendChild(h1);
+        Nc1.appendChild(head_p);
 
-        Nc2.append(context_p1);
+        Nc2.appendChild(context_p1);
         var context_p2 = p.cloneNode(true);
-        context_p2.append(context_span1);
-        context_p2.append(context_span2);
-        context_p2.append(context_span3);
-        Nc2.append(context_p2);
+        context_p2.appendChild(context_span1);
+        context_p2.appendChild(context_span2);
+        context_p2.appendChild(context_span3);
+        Nc2.appendChild(context_p2);
 
-        Nc3.append(context_address);
-        Nc4.append(context_update);
-        Nc5.append(button);
+        Nc3.appendChild(context_address);
+        Nc4.appendChild(context_update);
+        Nc5.appendChild(button);
 
 
         var Nrow = row.cloneNode(true);
-        Nrow.append(Nc1);
-        Nrow.append(Nc2);
-        Nrow.append(Nc3);
-        Nrow.append(Nc4);
-        Nrow.append(Nc5);
+        Nrow.appendChild(Nc1);
+        Nrow.appendChild(Nc2);
+        Nrow.appendChild(Nc3);
+        Nrow.appendChild(Nc4);
+        Nrow.appendChild(Nc5);
 
 //        var href = document.createElement("a");
 //        href.setAttribute("href",DETAIL_PREFIX+"?d="+data.id);
 
 //        href.append(Nrow);
 //        show.append(href);
-        show.append(Nrow);
+        show.appendChild(Nrow);
         show.appendChild(document.createElement("hr"));
     };
 
 </script>
-
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="5" class="details-header">店家招聘</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-click">本地招聘信息</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">本地求职信息</a></li>
-        </ul>
-    </div>
-</div>
 
 <div class="row">
     <div class="hidden-xs">
@@ -138,3 +158,4 @@
     <!--</div>-->
     <!--<hr>-->
 </div>
+</html>

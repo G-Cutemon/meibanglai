@@ -165,6 +165,10 @@ li,p,ul {
 }
 
 
+/* 全局设置结束 */
+
+/* 自定义设置开始 */
+
 header {
     color: #666;
     /*box-shadow: 0 1px 2px #ccc;  盒子边框*/
@@ -174,4 +178,9 @@ header {
 
 #header{
     width: 100%;
+}
+
+.container {
+	width: 1190px;
+	margin: 0 auto;
 }

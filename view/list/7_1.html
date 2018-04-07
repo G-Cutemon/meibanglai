@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="container">
+			<dl>
+				<dt>物流快递</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">全国物流</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">快递查询</a>
+				</dd>
+				<dd>
+					<a data-type="3" class="details-a-click">网点查询</a>
+				</dd>
+			</dl>
+		</div>
+	</div>	
+
+	<div class="hidden-xs">
+		<hr class="hr1" />
+	</div>
+	
+	<div id="show">
+		
+	</div>
+</body>
 <script>
     $(document).ready(function () {
         button_none_click_seleData();
@@ -185,18 +219,6 @@ var formatDate = function (n) {
 };
 </script>
 
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="7" class="details-header">物流快递</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-click">全国物流</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">快递查询</a></li>
-            <li><a  data-type="3" class="details-a-Nclick">网点查询</a></li>
-        </ul>
-    </div>
-</div>
 <div class="hidden-xs">
     <hr class="hr1"/>
 </div>
@@ -224,3 +246,4 @@ var formatDate = function (n) {
     <!--</div>-->
     <!--<hr>-->
 </div>
+</html>
