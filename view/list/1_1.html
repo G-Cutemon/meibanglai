@@ -94,86 +94,89 @@
 		</div>
 	</div>
 	
-
+	<div id="wp"></div>
+	
 	<div class="hidden-xs">
 		<hr class="hr1" />
 	</div>
 	
+	
 	<div id="show">
-		
 	</div>
 </body>
-<script>
-    //    var DETAILS_URL = "/view/data/"
-    var LOGO_URL = "//meibanglai.com/image/mbhbrand/";
-    var show = document.getElementById("show");
 
-    var row = document.createElement("div");
-    row.classList.add("row");
-    row.classList.add("marginTop1r");
-    row.setAttribute("style","display: none;");
-    var c1 = document.createElement("div");
-    c1.classList.add("col-xs-12");
-    c1.classList.add("col-sm-12");
-    c1.classList.add("col-md-12");
-    var c2 = document.createElement("div");
-    c2.classList.add("hidden-xs");
-    c2.classList.add("col-sm-2");
-    c2.classList.add("col-md-2");
-    var c3 = document.createElement("div");
-    c3.classList.add("col-xs-12");
-    c3.classList.add("col-sm-8");
-    c3.classList.add("col-md-8");
-    var showData = function (data) {
-        var a = document.createElement("a");
-        a.setAttribute("style","color: #000000;");
-//        a.setAttribute("href", "/view/data/MbhBrand.html?d="+data.id);
-        var h1 = document.createElement("h1");
-        h1.innerHTML = data.brand_name;
-        a.appendChild(h1);
+<!--<script src="/js/data/brand.js" type="text/javascript" charset="utf-8"></script>-->
 
-        var img = document.createElement("img");
-        img.setAttribute("src", LOGO_URL+data.brand_logo);
-        img.setAttribute("class","details-1-img");
-
-        var p = document.createElement("p");
-        var p1 = p.cloneNode(true);
-        var p2 = p.cloneNode(true);
-        var p3 = p.cloneNode(true);
-        var p4 = p.cloneNode(true);
-//      console.log(p1);
-        p1.innerHTML="公司名："+data.campany_name;
-        p1.setAttribute("style","font-weight: bold;font-size: 1rem;");
-        p2.innerHTML="参展产品："+data.product_name;
-        p3.innerHTML="产品介绍："+data.product;
-        p3.classList.add("show_box1-context_product");
-        p4.innerHTML="品牌官网："+data.website;
-
-
-        var Nc1 = c1.cloneNode(true);
-        var Nc2 = c2.cloneNode(true);
-        var Nc3 = c3.cloneNode(true);
-        var Nrow = row.cloneNode(true);
-        Nc3.appendChild(p1);
-        Nc3.appendChild(p2);
-        Nc3.appendChild(p3);
-        Nc3.appendChild(p4);
-        Nc3.classList.add("show_box1-context");
-
-        Nc2.appendChild(img);
-
-        Nc1.appendChild(a);
-
-//        Nrow.setAttribute("href",);
-        Nrow.appendChild(Nc1);
-        Nrow.appendChild(Nc2);
-        Nrow.appendChild(Nc3);
-
-        show.appendChild(Nrow);
-
-        show.appendChild(document.createElement("hr"));
-
-    }
-
+<script id="tpl" type="text/html">
+	<%var LOGO_URL = '//meibanglai.com/image/mbhbrand/';%>
+	<%for (var i = 0; i < data.length; i++) {%>
+		<div class="row marginTop1r">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<a style="color: #000000;">
+					<h1><%:=data[i].brand_name%></h1></a>
+			</div>
+			<div class="hidden-xs col-sm-2 col-md-2"><img src="<%:=LOGO_URL%><%:=data[i].brand_logo%>" class="details-1-img"></div>
+			<div class="col-xs-12 col-sm-8 col-md-8 show_box1-context">
+				<p style="font-weight: bold;font-size: 1rem;">公司名：<%:=data[i].campany_name%></p>
+				<p>参展产品：<%:=data[i].product_name%></p>
+				<p class="show_box1-context_product">产品介绍：<%:=data[i].product%></p>
+				<p>品牌官网：<%:=data[i].website%></p>
+			</div>
+		</div>
+		<hr>
+	<%}%>
+	
+	<table>
+		<caption>for循环输出两次</caption>
+		<%var test = '输出自定义变量';%>
+		<%for (var i = 0; i < 2; i++) {%>
+		<tr>
+			<td>&lt;%=html%&gt;默认</td>
+			<td>
+				<%=html%>
+			</td>
+		</tr>
+		<tr>
+			<td>&lt;%:h=html&gt;html转义</td>
+			<td>
+				<%:h=html%>
+			</td>
+		</tr>
+		<tr>
+			<td>&lt;%:=html&gt;不转义</td>
+			<td>
+				<%:=html%>
+			</td>
+		</tr>
+		<tr>
+			<td>&lt;%:u=url&gt;URI转义</td>
+			<td>
+				<%:u=url%>
+			</td>
+		</tr>
+		<tr>
+			<td>var</td>
+			<td>
+				<%:=test%><%:=test%>
+			</td>
+		</tr>
+		<tr>
+			<td>&lt;%=test + 1&gt;表达式</td>
+			<td>
+				<%=test + 1%>
+			</td>
+		</tr>
+		<%if (true) {%>
+		<tr>
+			<td>if</td>
+			<td>if 语句</td>
+		</tr>
+		<%}%>
+		<tr>
+			<td>分割线</td>
+			<td>------------------------------</td>
+		</tr>
+		<%}%>
+	</table>
 </script>
 </html>

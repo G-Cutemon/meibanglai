@@ -40,6 +40,8 @@
 		</div>
 	</div>
 	
+	<div id="wp"></div>
+	
 	<div class="row">
 		<div class="hidden-xs">
 			<hr class="hr1" style="padding-top: 10px">
@@ -72,6 +74,34 @@
 		
 	</div>
 </body>
+<script id="tpl" type="text/html">
+	<%var LOGO_URL = '//meibanglai.com/image/school/';%>
+	<%var DETAILS_URL = '/view/data/school.html';%>
+	<%for (var i = 0; i < data.length; i++) {%>
+		<div class="row show-box3" style="">
+			<div class="col-xs-6 col-sm-3 col-md-3 show3-head">
+				<a href="/view/data/school.html?d=4213">
+					<h1 style="color: #000000">广州合纵连横化妆品有限公司</h1></a>
+				<p>美容美体培训机构/学校</p>
+			</div>
+			<div class="col-xs-6 col-sm-2 col-md-2 show3-context">
+				<p></p>
+			</div>
+			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
+				<p>安徽合肥</p>
+			</div>
+			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
+				<p>2011.03.26</p>
+			</div>
+			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
+				<a href="/view/data/school.html?d=4213"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="margin-top: -2rem;position: inherit;width: 160px;height: 120px;"></a>
+			</div>
+		</div>
+		<hr>
+	<%}%>
+	
+</script>
+
 <script>
 
 

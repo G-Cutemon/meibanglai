@@ -1,9 +1,10 @@
 var category;
 var type;
 var num;
+var getData;
 var DETAIL_LIST_PREFIX = "/view/list/";//详情列表连接前后缀
 var DETAIL_LIST_SUFFIX = ".html";
-var DETAIL_LIST_LOCATION = "/view/data/main.html";
+//var DETAIL_LIST_LOCATION = "/view/data/main.html";
 
 $(document).ready(function () {
     ready();
@@ -15,7 +16,9 @@ var ready = function () {
     ul_basic_click_simulate();//模拟点击
 };
 
+// 请求后台数据并调用一次给标签绑定事件的函数
 var ajaxTest = function(num){
+	// 以下分类不用请求或请求地址不同
 	if (category == 3 || category == 4 || category == 7){
 		return a_details_click_showList();
 	}
@@ -28,7 +31,11 @@ var ajaxTest = function(num){
             "num":num
         },
         success: function(data) {
-            console.log(data);
+        	// 请求数据成功后加载template模板
+        	var html = template(document.getElementById('tpl').innerHTML, data);
+        	//	console.log(html);
+        	document.getElementById('wp').innerHTML = html;
+            console.log(data.data.length);
             if(data.code == 200) {
                 ppaging(
                     document.getElementById("page"),
@@ -37,14 +44,14 @@ var ajaxTest = function(num){
                     data.totalSize
                 );
                 document.getElementById("show").innerHTML = "";//清空
-                for (var i = 0; i < data.data.length; i++) {
-                    var d = data.data[i];
-                    showData(d);
-
-                    var show = document.getElementById("show").children;
-                    $(show[show.length-2]).fadeIn(i*250);//渐显 XXX:会展和快递比较特殊在页面做
-                    // $(show[show.length-1]).fadeIn(i*250);
-                }
+//              for (var i = 0; i < data.data.length; i++) {
+//                  var d = data.data[i];
+//                  showData(d);
+//
+//                  var show = document.getElementById("show").children;
+//                  $(show[show.length-2]).fadeIn(i*250);//渐显 XXX:会展和快递比较特殊在页面做
+//                  // $(show[show.length-1]).fadeIn(i*250);
+//              }
             }else{
                 var page = document.getElementById("page");
                 if(page != null)
@@ -93,7 +100,7 @@ var a_Page_ready_bindHear = function (){
                         document.getElementById("show").innerHTML = "";//清空
                         for (var i = 0; i < data.data.length; i++) {
                             var d = data.data[i];
-                            showData(d);//填数据
+                            showData(d);// 循环填数据
 
                             var show = document.getElementById("show").children;
                             $(show[show.length-2]).fadeIn(i*250);//渐显 XXX:会展和快递比较特殊在页面做
@@ -206,6 +213,7 @@ var a_Page_ready_bindHear = function (){
 //  }
 //};
 
+// 这里给所有标签绑上点击事件
 var a_details_click_showList = function(){
 	$('.details-a-click').click(function(){
 //		更新数据
@@ -219,7 +227,7 @@ var a_details_click_showList = function(){
 	});
 }
 
-//模拟点击
+// 加载内页模板并请求一次后台数据
 var ul_basic_click_simulate = function () {
     c = $.getUrlParam("category");
     t = $.getUrlParam("type");
@@ -229,25 +237,6 @@ var ul_basic_click_simulate = function () {
     $("#list-details").load(DETAIL_LIST_PREFIX + c + "_1" + DETAIL_LIST_SUFFIX,function(){
 		n ? ajaxTest(n) : ajaxTest(1);
 	});
-//  if(c && t){
-//  	category = c;
-//  	type = t;
-//  	$("#list-details").load(DETAIL_LIST_PREFIX + c + "_1" + DETAIL_LIST_SUFFIX,function(){
-//  		n ? ajaxTest(n) : ajaxTest(1);
-//  	});
-//  } else if(c && !t){
-//  	category = c;
-//  	type = 1;
-//  	$("#list-details").load(DETAIL_LIST_PREFIX + c + "_1" + DETAIL_LIST_SUFFIX,function(){
-//  		ajaxTest(1);
-//  	});
-//  } else{
-//  	category = 1;
-//      type = 1;
-//      $("#list-details").load(DETAIL_LIST_PREFIX+ c + "_1" + DETAIL_LIST_SUFFIX,function(){
-//  		ajaxTest(1);
-//  	});
-//  }
     console.log(c,t,n);
 };
 
@@ -268,7 +257,7 @@ $.getUrlParam = function(name){
 }
 
 // 删除主页图片
-if(window.location.search){
+if($.getUrlParam("category")){
 	$('.main-pic').remove();
 }
 
