@@ -10,3 +10,7 @@
 	font-size: 40px;
 	color: #fff;
 }
+
+.phone-header {
+	z-index: 1000;
+}

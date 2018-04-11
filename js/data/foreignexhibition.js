@@ -1,5 +1,5 @@
 var startCount = 0;
-var errorPaga = "http://rocketship.com.au/404/";
+var errorPaga = "/ErrorFiles/404.html";
 var IMAGE_DELETE_URL = "/image/shoptransfer/";
 
 $(document).ready(function () {
@@ -9,15 +9,14 @@ $(document).ready(function () {
 
 var ready = function () {
     a_none_ready_simulationClick();
-    li_list_basic_onclick_clickLi();
     // $("img").addClass("carousel-inner img-responsive img-rounded");
 };
 
 
 var a_none_ready_simulationClick = function() {
-    var d = getQueryString("d");
+    var d = $.getUrlParam("d");
     $.ajax({
-        url: "/data/getForeignExhibition.do",
+        url: "//meibanglai.com/data/getForeignExhibition.do",
         type: "get",
         data: {
             "d":d
@@ -55,11 +54,11 @@ var a_none_ready_simulationClick = function() {
 
 
             }else{
-                // window.location.href = errorPaga;
+                   window.location.href = errorPaga;
             }
         },
         error: function () {
-            // window.location.href = errorPaga;
+               window.location.href = errorPaga;
         }
 
     })
@@ -67,25 +66,11 @@ var a_none_ready_simulationClick = function() {
 
 
 //获取参数地址栏参数
-function getQueryString(name) {
-    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-        return unescape(r[2]);
-    }
-    return null;
+$.getUrlParam = function(name){
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
 }
-
-
-var li_list_basic_onclick_clickLi = function () {
-    var lis = document.getElementsByClassName("list-basic")[0].getElementsByTagName("li");
-    for (i=0; i<lis.length; i++){
-        lis[i].firstElementChild.onclick = function () {
-            var url = this.dataset.url;
-            window.location.href= "/view/data/index2N.html?category="+url;
-        }
-    }
-};
 
 
 

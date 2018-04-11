@@ -12,11 +12,10 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- 移动设备优先(优先栅格布局-水平排列) 进制用户缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="./css/public/default.css" rel="stylesheet" type="text/css" />
-    <link href="./css/public/rasterize.css" rel="stylesheet" type="text/css" />
-    <link href="./css/public/meanmenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="./css/public/navbar.css" rel="stylesheet" type="text/css" />
-    <link href="./css/company.css" rel="stylesheet" type="text/css" />
+    <link href="/css/company.css" rel="stylesheet" type="text/css" />
+	<link href="/css/public/default.css" rel="stylesheet" type="text/css" />
+	<link href="/css/data/main.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
 
 
@@ -27,51 +26,23 @@
 </head>
 
 <body>
-    <div id="header_html"></div>
-
-    <div class="container">
-        <div class="row">
-            <div class=" col-sm-3 col-md-3 col-xs-12" style=" text-align: center; padding-top: 1%">
-                <a href="http://www.meibanglai.com/">
-                    <img class="img-responsive center-block" src="./image/public/blank.gif" data-echo="./image/logo.png">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-md-9 marginTop30" style="padding-top: 1%">
-                <div class="marginNone search-div">
-                    <div class="search ">
-                        <input name="" type="text" class="input-text radius size-S">
-                        <a>&nbsp;搜&nbsp;&nbsp;索</a>
-                    </div>
-                </div>
-                <div class="hidden-xs" style="padding-left: 10%">
-                    <a class="search-a hidden-xs">美容 | 美发 | 美甲 | 纹绣 | 化妆 | 足疗 | 养生 | 仪器 | 培训 | 招聘</a>
-                </div>
-            </div>
-        </div>
+    <div id="header-html"></div>
+    
+    <div class="fix-box">
+    	<div class="w1190">
+    		<dl class="w200">
+    			<dd>
+    				<a href="//meibanglai.com">首页</a>
+    			</dd>
+    			<dd>
+    				<a href="#">公司简介</a>
+    			</dd>
+    		</dl>
+    	</div>
     </div>
-
-    <div class="container-fluid hidden-xs marginTop30 ">
-        <div class="row" style="background-color: #FF008C;">
-            <div class="container">
-                <nav id="detailed ">
-                    <div class="nav">
-                        <div id="nav-detailed">
-                            <!--<a>商品分类</a>-->
-                            <ul>
-                                <li class="nav-detailed-li" title="1">
-                                    <a href="http://www.meibanglai.com/" style="color: #e6e6e6">首页</a>
-                                </li>
-                                <li class="nav-detailed-li" title="1">
-                                    <a href="javascript:void(0);" style="color: #e6e6e6">公司简介</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-
+    
+    <div id="wp">
+    
     <div class="container-fluid hidden-xs">
         <div class="row">
             <img src="./image/aboutUs.jpg" class="carousel-inner img-responsive img-rounded" />
@@ -137,13 +108,12 @@
         </div>
     </div>
 
-    <div id="bottom_html"></div>
+    <div id="footer-html" class="hidden-xs"></div>
 
 </body>
 
-<script charset="UTF-8" type="text/javascript" src="./js/public/jquery-3.2.1.min.js"></script>
-<!-- <script charset="UTF-8" type="text/javascript" src="../js/public/bootstrap.js"></script> -->
-<!-- <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" /> -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 <script type="text/javascript" src="./js/public/jquery.meanmenu.min.js"></script>
 <script type="text/javascript" src="./js/public/echo.js"></script>
 <script charset="UTF-8" type="text/javascript" src="./js/company.js"></script>
@@ -151,8 +121,7 @@
 <!-- <script type="text/javascript" src="/js/public/H-ui.js"></script> -->
 
 <script>
-    $("#header_html").load("./headerN.html");
-    $("#bottom_html").load("./bottom.html");
+	$("#header-html").load("/topbar.html"); 	$("#footer-html").load("/footer.html");
     Echo.init({
         offset: 100,
         throttle: 100

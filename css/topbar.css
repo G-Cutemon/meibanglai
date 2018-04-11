@@ -12,6 +12,17 @@ a {
 ul, ol {
 	list-style: none;
 }
+/* 固定顶部导航,分层提前,内页导航在main.css的.fix-box */
+header {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	width: 100%;
+    color: #666;
+    /*box-shadow: 0 1px 2px #ccc;  盒子边框*/
+    font-size: 14px;
+    display: block;
+}
 
 .m-logo {
 	height: 30px;
@@ -27,6 +38,9 @@ ul, ol {
     background: #cccccc;
 }
 
+/*.navbar {
+	position: fixed;
+}*/
 
 .topbar-info {
     position: relative;
@@ -40,7 +54,7 @@ ul, ol {
 
 }
 
-@media (max-width: 1190px) { .navbar { width: 1190px;}	
+@media (max-width: 1190px) { .navbar { width: 1190px;position: fixed;}	
 }
 
 @media (min-width: 769px) {

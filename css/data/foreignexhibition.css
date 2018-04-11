@@ -1,4 +1,5 @@
 .box-f{
+	margin-top: 140px;
     min-height: 45rem;
 }
 .logo{
@@ -64,30 +65,26 @@
 .box-c3{
 
 }
-table{
+.box-c3 table{
     margin: 1rem 0;
     width: 100%;
     border: 1px solid #FFC3DC;
 }
-tr{
+.box-c3 tr{
     border: 1px solid #FFC3DC;
     width: 100%;
     line-height: 2.5rem;
 }
-th{
+.box-c3 .container .row th{
     border-bottom: 1px solid #FFC3DC;
     border-right: 1px solid #FFC3DC;
-    width: 6rem;
+    width: 8rem;
     letter-spacing: 2px;
     font-weight: bold;
     background-color: #FEEDF5;
 }
-td{
+.box-c3 .container .row td{
     border-bottom: 1px solid #FFC3DC;
     padding-left: 1rem;
 }
-h1{
-    font-size: 1.5rem;
-    line-height: 3.5rem;
-    font-weight: initial;
-}
+

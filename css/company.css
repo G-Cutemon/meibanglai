@@ -138,36 +138,17 @@ font-size: 28px;
 font-weight: 100;
 text-align: center;
 }
-header nav {
-text-align: center;
-background: #efefef;
-}
-header nav ul {
-margin: 0;
-padding: 1em;
-list-style-type: none;
-}
-header nav ul li {
-display: inline;
-margin-left: 1em;
-}
-header nav ul li:first-child {
-margin-left: 0;
-}
-header nav ul li ul {
-display: none;
-}
 a {
 }
-a:hover {
+/*a:hover {
 color: #333;
-}
-a, a:hover {
+}*/
+/*a, a:hover {
 -o-transition: color 0.25s ease-in;
 -webkit-transition: color 0.25s ease-in;
 -moz-transition: color 0.25s ease-in;
 transition: color 0.25s ease-in;
-}
+}*/
 section, article, header {
 display: block;
 float: left;

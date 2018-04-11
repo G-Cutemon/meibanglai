@@ -12,7 +12,7 @@
     <link href="/css/public/default.css" rel="stylesheet" type="text/css" />
     <link href="/css/index.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/css/topbar.css" />
+	<link rel="stylesheet" type="text/css" href="/css/swipeslider.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
@@ -25,13 +25,26 @@
     <!--<object style="border:0px" type="text/x-scriptlet" data="header.html" width=100% height=50>
     </object>-->
     
-
-    <div class="index-hotimage hidden-xs">
-        <img src="/image/title1.jpg" style="height: 650px; width: 100%;">
-        <div class="nav">
-        	<strong>Enter</strong>
-        </div>
-    </div>
+    <figure id="responsiveness" class="swipslider hidden-xs">
+    	<ul class="sw-slides">
+    		<li class="sw-slide">
+    				<img src="/image/title1.jpg" alt="Summer beach concept">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="/image/hot1.png" alt="Lang from Yie Ar Kung Fu">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/hot2.png" alt="Tiny Tina">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/hot3.png" alt="Tiny Tina from Borderlands 2">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/logo/bbp.png" alt="Redhead girl">
+    			</li>
+    	</ul>
+    </figure>
+    
 
     <div id="footer-html"></div>
 
@@ -40,6 +53,35 @@
 <!--手机端开始-->
 <div class="hidden-lg hidden-sm hidden-md col-xs-12" style="background-color: #F6F6F6">
     <div class="phone-header">
+    	<div class="row">
+    		<div class="col-lg-6">
+    			<div class="input-group">
+    				<div class="input-group-btn">
+    					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+    					<ul class="dropdown-menu">
+    						<li>
+    							<a href="#">Action</a>
+    						</li>
+    						<li>
+    							<a href="#">Another action</a>
+    						</li>
+    						<li>
+    							<a href="#">Something else here</a>
+    						</li>
+    						<li role="separator" class="divider"></li>
+    						<li>
+    							<a href="#">Separated link</a>
+    						</li>
+    					</ul>
+    				</div>
+    				<!-- /btn-group -->
+    				<input type="text" class="form-control" aria-label="...">
+    			</div>
+    			<!-- /input-group -->
+    		</div>
+    		<!-- /.col-lg-6 -->
+    	</div>
+    	<!-- /.row -->
         <p>
             <img src="/image/logo/favicon.ico" style="width: 30px; height:30px;" >
             <span><input type="text" placeholder="美业服务找美帮来"></span>
@@ -47,38 +89,25 @@
     </div>
 
     <div class="phone-content">
-        <div id="slider-3">
-            <div class="slider">
-                <div class="bd">
-                    <ul>
-                        <li><a href="#" target="_blank"><img src="/image/title1.jpg" style="" ></a></li>
-                        <li><a href="#" target="_blank"><img src="/image/hot1.png" ></a></li>
-                        <!--<li><a href="#" target="_blank"><img src="image/hot1.png" ></a></li>-->
-                        <!--<li><a href="#" target="_blank"><img src="image/hot1.png" ></a></li>-->
-                    </ul>
-                </div>
-                <ol class="hd cl dots">
-                    <li>1</li>
-                    <li>2</li>
-                    <!--<li>3</li>-->
-                    <!--<li>4</li>-->
-                </ol>
-            </div>
-        </div>
-
-        <div class="row swiper-wrapper" style="margin-top: 0.5rem">
-            <div class="col-xs-3"><a href="/view/data/main.html?category=1&type=1"><img src="/image/1.png"><p>美业品牌</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=2&type=1"><img src="/image/2.png"><p>美业机构</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=3&type=1"><img src="/image/3.png"><p>展会信息</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=4&type=1"><img src="/image/4.png"><p>美妆资讯</p></a></div>
-        </div>
-
-        <div class="row swiper-wrapper" style="margin-bottom: 0.5rem;">
-            <div class="col-xs-3"><a href="/view/data/main.html?category=5&type=1"><img src="/image/5.png"><p>美业招聘</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=6&type=1"><img src="/image/6.png"><p>门店转让</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=7&type=1"><img src="/image/7.png"><p>快递查询</p></a></div>
-            <div class="col-xs-3"><a href="/view/data/main.html?category=8&type=1"><img src="/image/8.png"><p>便民服务</p></a></div>
-        </div>
+    	<figure id="responsiveness2" class="swipslider">
+    		<ul class="sw-slides">
+    			<li class="sw-slide">
+    				<img src="/image/title1.jpg" alt="Summer beach concept">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="/image/hot1.png" alt="Lang from Yie Ar Kung Fu">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/hot2.png" alt="Tiny Tina">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/hot3.png" alt="Tiny Tina from Borderlands 2">
+    			</li>
+    			<li class="sw-slide">
+    				<img src="image/logo/bbp.png" alt="Redhead girl">
+    			</li>
+    		</ul>
+    	</figure>
     </div>
 
     <div class="phone-bottom">
@@ -117,6 +146,7 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="/js/public/swipeslider.js" type="text/javascript" charset="utf-8"></script>
 <!--<script src="/js/public/H-ui.js"></script>-->
 <script charset="UTF-8" type="text/javascript" src="/js/index.js"></script>
 <script>

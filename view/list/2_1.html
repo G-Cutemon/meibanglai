@@ -8,32 +8,32 @@
 </head>
 <body>
 	<div class="fix-box">
-		<div class="container">
+		<div class="w1190">
 			<dl class="w600">
 				<dt>美业机构</dt>
 				<dd>
 					<a data-type="1" class="details-a-click">美容培训</a>
 				</dd>
 				<dd>
-					<a data-type="3" class="details-a-click">美发培训</a>
+					<a data-type="2" class="details-a-click">美发培训</a>
 				</dd>
 				<dd>
-					<a data-type="12" class="details-a-click">美睫培训</a>
+					<a data-type="3" class="details-a-click">美睫培训</a>
 				</dd>
 				<dd>
-					<a data-type="8" class="details-a-click">美甲培训</a>
+					<a data-type="4" class="details-a-click">美甲培训</a>
 				</dd>
 				<dd>
-					<a data-type="26" class="details-a-click">化妆培训</a>
+					<a data-type="5" class="details-a-click">化妆培训</a>
 				</dd>
 				<dd>
-					<a data-type="25" class="details-a-click">纹绣培训</a>
+					<a data-type="6" class="details-a-click">纹绣培训</a>
 				</dd>
 				<dd>
-					<a data-type="25" class="details-a-click">足疗培训</a>
+					<a data-type="7" class="details-a-click">足疗培训</a>
 				</dd>
 				<dd>
-					<a data-type="25" class="details-a-click">按摩培训</a>
+					<a data-type="8" class="details-a-click">按摩培训</a>
 				</dd>
 			</dl>
 	
@@ -41,148 +41,31 @@
 	</div>
 	
 	<div id="wp"></div>
-	
-	<div class="row">
-		<div class="hidden-xs">
-			<hr class="hr1" style="padding-top: 10px">
-		</div>
-	</div>
-	<div class="row hidden-xs show-box3-header">
-		<div class=" col-sm-3 col-md-3">
-			学校名字
-		</div>
-		<div class=" col-sm-2 col-md-2" style="padding-left: 8rem;">
-			主要科目
-		</div>
-		<div class=" col-sm-2 col-md-2">
-			所在地址
-		</div>
-		<div class=" col-sm-2 col-md-2">
-			成立时间
-		</div>
-		<div class=" col-sm-2 col-md-2">
-			logo
-		</div>
-	</div>
-	
-
-	<div class="hidden-xs">
-		<hr class="hr1" />
-	</div>
-	
-	<div id="show">
-		
-	</div>
 </body>
 <script id="tpl" type="text/html">
 	<%var LOGO_URL = '//meibanglai.com/image/school/';%>
 	<%var DETAILS_URL = '/view/data/school.html';%>
+	<table class="table">
+		<tr class="warning">
+			<th>学校名称</th>
+			<th>培训科目</th>
+			<th>所在地址</th>
+			<th>成立时间</th>
+			<th>学校Logo</th>
+		</tr>
 	<%for (var i = 0; i < data.length; i++) {%>
-		<div class="row show-box3" style="">
-			<div class="col-xs-6 col-sm-3 col-md-3 show3-head">
-				<a href="/view/data/school.html?d=4213">
-					<h1 style="color: #000000">广州合纵连横化妆品有限公司</h1></a>
-				<p>美容美体培训机构/学校</p>
-			</div>
-			<div class="col-xs-6 col-sm-2 col-md-2 show3-context">
-				<p></p>
-			</div>
-			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
-				<p>安徽合肥</p>
-			</div>
-			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
-				<p>2011.03.26</p>
-			</div>
-			<div class="hidden-xs col-sm-2 col-md-2 show3-x">
-				<a href="/view/data/school.html?d=4213"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="margin-top: -2rem;position: inherit;width: 160px;height: 120px;"></a>
-			</div>
-		</div>
-		<hr>
+		<tr class="active">
+			<td>
+				<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>">广州合纵连横化妆品有限公司</a>
+			<p>美容美体培训机构/学校</p>
+			</td>
+			<td><%:=data[i].school_course%></td>
+			<td><%:=data[i].school_address%></td>
+			<td><%:=data[i].school_create_time%></td>
+			<td><a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="width: 160px;height: 120px;"></a></td>
 	<%}%>
-	
-</script>
-
-<script>
-
-
-    var showData = function (data) {
-        var DETAILS_URL = "/view/data/school.html";
-        var LOGO_URL = "//meibanglai.com/image/school/";
-        var show = document.getElementById("show");
-        var row = document.createElement("div");
-        row.classList.add("row");
-        row.classList.add("show-box3");
-        row.setAttribute("style","display: none;");
-        var c1 = document.createElement("div");
-        c1.classList.add("col-xs-6");
-        c1.classList.add("col-sm-3");
-        c1.classList.add("col-md-3");
-        c1.classList.add("show3-head");
-        var c2 = document.createElement("div");
-        c2.classList.add("col-xs-6");
-        c2.classList.add("col-sm-2");
-        c2.classList.add("col-md-2");
-        c2.classList.add("show3-context");
-        var c3 = document.createElement("div");
-        c3.classList.add("hidden-xs");
-        c3.classList.add("col-sm-2");
-        c3.classList.add("col-md-2");
-        c3.classList.add("show3-x");
-
-        var p = document.createElement("p");
-        var span = document.createElement("span");
-        var a = document.createElement("a");
-        a.setAttribute("href",DETAILS_URL+"?d="+data.id);
-
-        var h1 = document.createElement("h1");
-        h1.innerHTML = data.school_name	;
-        h1.setAttribute("style","color: #000000");
-        a1 = a.cloneNode(true);
-        a1.appendChild(h1);
-
-        var head_p = p.cloneNode(true);
-        head_p.innerHTML = data.school_type;
-
-        var context_p1 = p.cloneNode(true);
-        context_p1.innerHTML = data.school_course;
-        var context_address = p.cloneNode(true);
-        context_address.innerHTML = data.school_address;
-
-        var context_update = p.cloneNode(true);
-        context_update.innerHTML = data.school_create_time;
-
-        var logo = document.createElement("img");
-        a2 = a.cloneNode(true);
-        logo.setAttribute("src",LOGO_URL+data.logo_url);
-        logo.setAttribute("style","margin-top: -2rem;position: inherit;width: 160px;height: 120px;");
-        a2.appendChild(logo);
-
-        var Nc1 = c1.cloneNode(true);
-        var Nc2 = c2.cloneNode(true);
-        var Nc3 = c3.cloneNode(true);
-        var Nc4 = c3.cloneNode(true);
-        var Nc5 = c3.cloneNode(true);
-
-        Nc1.appendChild(a1);
-        Nc1.appendChild(head_p);
-
-        Nc2.appendChild(context_p1);
-
-        Nc3.appendChild(context_address);
-        Nc4.appendChild(context_update);
-        Nc5.appendChild(a2);
-
-        var Nrow = row.cloneNode(true);
-        Nrow.appendChild(Nc1);
-        Nrow.appendChild(Nc2);
-        Nrow.appendChild(Nc3);
-        Nrow.appendChild(Nc4);
-        Nrow.appendChild(Nc5);
-
-        show.appendChild(Nrow);
-        show.appendChild(document.createElement("hr"));
-    };
-
-
+		</tr>
+	</table>
+	<hr>
 </script>
 </html>
