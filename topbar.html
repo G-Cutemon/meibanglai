@@ -38,9 +38,52 @@
 				<!--创建一个bootstrapLOGO布局-->
 				<!--注意:必须要创建navbar-header，把logo以及响应式按钮给包裹进去..否则..大家删除下navbar-header 缩小屏幕点击下拉菜单就知道了-->
 				<div class="navbar-header">
-					<div class="navbar-brand">
+					<div class="navbar-brand hidden-xs">
 						<img src="/image/logo.png" class="m-logo" />
 					</div>
+					<div class="row visible-xs dropdown-xs">
+						<div class="col-lg-6">
+							<div class="input-group">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">美容 <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">美容</a>
+										</li>
+										<li>
+											<a href="#">美发</a>
+										</li>
+										<li>
+											<a href="#">美甲</a>
+										</li>
+										<li>
+											<a href="#">化妆</a>
+										</li>
+										<li>
+											<a href="#">仪器</a>
+										</li>
+										<li>
+											<a href="#">培训</a>
+										</li>
+										<li>
+											<a href="#">招聘</a>
+										</li>
+										<!--<li role="separator" class="divider"></li>
+					    						<li>
+					    							<a href="#">Separated link</a>
+					    						</li>-->
+									</ul>
+								</div>
+								<!-- /btn-group -->
+								<input type="text" class="form-control" aria-label="...">
+								<button class="glyphicon glyphicon-search btn btn-default" href="#"></button>
+							</div>
+							<!-- /input-group -->
+						</div>
+						<!-- /.col-lg-6 -->
+					</div>
+					<!-- /.row -->
+					
 					<!--创建一个按钮
 						class{
 							navbar-toggle:向js传递这个按钮是可以点击的
@@ -82,7 +125,7 @@
 						navbar-form:可以呈现良好的垂直对齐具体参考http://v3.bootcss.com/components/#navbar-forms
 						navbar-left:用来规定导航条内元素对齐的具体参考http://v3.bootcss.com/components/#navbar-component-alignment
 						}-->
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-left hidden-xs" role="search">
 						<!--class{
 								btn:创建一个按钮所必须的基类
 								btn:按钮样式 基于btn基类 具体参考http://v3.bootcss.com/css/#buttons
@@ -99,14 +142,39 @@
 						
 					</form>
 					<!--表单-->
-		
+					
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="/view/data/main.html?category=1" class="dropdown-toggle hidden-xs"  role="button" aria-haspopup="true" aria-expanded="false">美业品牌<span class="caret"></span></a>
 							<a class="dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">美业品牌<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li>
-									<a href="/view/data/main.html?category=1&type=1">专业美容</a>
+								<li class="dropdown-submenu">
+									<a tabindex="-1" href="#">美容美发</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a tabindex="-1" href="#">专业美容</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a tabindex="-1" href="#">美容养生</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a tabindex="-1" href="#">减肥纤体</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a tabindex="-1" href="#">保健护理</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a tabindex="-1" href="#">专业发品</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a tabindex="-1" href="#">专业美发</a>
+										</li>
+									</ul>
 								</li>
 								<!--class{
 											divider:分隔线样式

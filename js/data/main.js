@@ -130,13 +130,13 @@ var ajaxTest = function(num){
             $("#pagination-bottom").whjPaging(options);
             
             
-            if(data.code == 200) {
-                ppaging(
-                    document.getElementById("page"),
-                    num,
-                    data.totalPage,
-                    data.totalSize
-                );
+//          if(data.code == 200) {
+//              ppaging(
+//                  document.getElementById("page"),
+//                  num,
+//                  data.totalPage,
+//                  data.totalSize
+//              );
 //              document.getElementById("show").innerHTML = "";//清空
 //              for (var i = 0; i < data.data.length; i++) {
 //                  var d = data.data[i];
@@ -146,17 +146,17 @@ var ajaxTest = function(num){
 //                  $(show[show.length-2]).fadeIn(i*250);//渐显 XXX:会展和快递比较特殊在页面做
 //                  // $(show[show.length-1]).fadeIn(i*250);
 //              }
-            }else{
-                var page = document.getElementById("page");
-                if(page != null)
-                    page.innerHTML = "";
-            }
-            a_Page_ready_bindHear();
+//          }else{
+//              var page = document.getElementById("page");
+//              if(page != null)
+//                  page.innerHTML = "";
+//          }
+//          a_Page_ready_bindHear();
         },
         error:function () {
-            var page = document.getElementById("page");
-            if(page != null)
-                page.innerHTML = "";
+//          var page = document.getElementById("page");
+//          if(page != null)
+//              page.innerHTML = "";
         }
     });
     a_details_click_showList();
@@ -165,49 +165,49 @@ var ajaxTest = function(num){
 
 
 //绑定分页按钮
-var a_Page_ready_bindHear = function (){
-    var as = document.getElementById("page").children;
-    var z=0;
-    for (; z<as.length; ){
-        a = as[z];
-        z = z+1;
-        a.href="javascript:scroll(0,0)";
-        a.onclick = function (e){
-            t = e.target.title;
-            $.ajax({
-                url: AJAX_URL,
-                type: "get",
-                // async:false,
-                data: {"category":category,
-                    "type":type,
-                    "num":t
-                },
-                success: function(data) {
-                	// 请求数据成功后加载template模板
-                	var html = template(document.getElementById('tpl').innerHTML, data);
-                	//	console.log(html);
-                	document.getElementById('wp').innerHTML = html;
-                    if(data.code == 200){
-                        ppaging(
-                            document.getElementById("page"),
-                            t,
-                            data.totalPage,
-                            data.totalSize
-                        );
-	                    history.pushState(null, null, "?category=" + category + "&type=" + type + "&num=" + t);
-//	                    $(location).attr("href", window.location.href);
-                    }else{
-                        var page = document.getElementById("page");
-                        if(page != null)
-                            page.innerHTML = "";
-                    }
-                    a_Page_ready_bindHear();
-                }
-            });
-            a_details_click_showList();
-        };
-    }
-};
+//var a_Page_ready_bindHear = function (){
+//  var as = document.getElementById("page").children;
+//  var z=0;
+//  for (; z<as.length; ){
+//      a = as[z];
+//      z = z+1;
+//      a.href="javascript:scroll(0,0)";
+//      a.onclick = function (e){
+//          t = e.target.title;
+//          $.ajax({
+//              url: AJAX_URL,
+//              type: "get",
+//              // async:false,
+//              data: {"category":category,
+//                  "type":type,
+//                  "num":t
+//              },
+//              success: function(data) {
+//              	// 请求数据成功后加载template模板
+//              	var html = template(document.getElementById('tpl').innerHTML, data);
+//              	//	console.log(html);
+//              	document.getElementById('wp').innerHTML = html;
+//                  if(data.code == 200){
+//                      ppaging(
+//                          document.getElementById("page"),
+//                          t,
+//                          data.totalPage,
+//                          data.totalSize
+//                      );
+//	                    history.pushState(null, null, "?category=" + category + "&type=" + type + "&num=" + t);
+////	                    $(location).attr("href", window.location.href);
+//                  }else{
+//                      var page = document.getElementById("page");
+//                      if(page != null)
+//                          page.innerHTML = "";
+//                  }
+//                  a_Page_ready_bindHear();
+//              }
+//          });
+//          a_details_click_showList();
+//      };
+//  }
+//};
 
 //点击粗条目
 //var a_none_click_showType = function () {

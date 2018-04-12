@@ -8,7 +8,7 @@ if($(window).width() > 768){
 		$(this).attr("class", "dropdown");
 		$(this).children("a").attr("aria-expanded", "false").css("color", "#fff");
 	});
-}
+};
 
 
 //$('.navbar-nav>li').click(function)

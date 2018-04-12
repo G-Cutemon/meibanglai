@@ -2,8 +2,8 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+	<!--<meta http-equiv="X-UA-Compatible" content="ie=edge" />-->
 	<title>Document</title>
 </head>
 <body>
@@ -105,8 +105,8 @@
 	<%for (var i = 0; i < data.length; i++) {%>
 		<tr>
 			<td style="width: 30%;">
-				<a style="color: #000000;"><h1><%:=data[i].brand_name%></h1></a>
-				<img src="<%:=LOGO_URL%><%:=data[i].brand_logo%>" style="max-height: 180px; max-width: 180px;">
+				<a href="#" style="color: #000000;font-weight: bold;font-size: 1rem;"><%:=data[i].brand_name%></a>
+				<img src="<%:=LOGO_URL%><%:=data[i].brand_logo%>" style="max-height: 140px; max-width: 140px;">
 			</td>
 				<td>
 					<p style="font-weight: bold;font-size: 1rem;">公司名：<%:=data[i].campany_name%></p>
