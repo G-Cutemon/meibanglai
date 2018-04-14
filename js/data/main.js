@@ -9,7 +9,7 @@ var DETAIL_LIST_SUFFIX = ".html";
 
 $(document).ready(function () {
     ready();
-
+	
 });
 
 var ready = function () {
@@ -69,7 +69,7 @@ var ajaxTest = function(num){
             	//可选，总页数
             	totalPage: data.totalPage,
             	//可选，展示页码数量，默认5个页码数量
-            	showPageNum: 10,
+            	showPageNum: 7,
             	//可选，首页按钮展示文本，默认显示文本为首页
             	firstPage: '首页',
             	//可选，上一页按钮展示文本，默认显示文本为上一页
@@ -87,7 +87,7 @@ var ajaxTest = function(num){
             	//可选，共{}页展示文本，默认显示文本为共{}页，其中{}会在js具体转化为数字
             	totalPageText: '共{}页',
             	//可选，是否展示首页与尾页，默认true
-            	isShowFL: true,
+            	isShowFL: false,
             	//可选，是否展示每页N条下拉框，默认true
             	isShowPageSizeOpt: false,
             	//可选，是否展示跳到指定页数，默认true
@@ -325,8 +325,9 @@ var ul_basic_click_simulate = function () {
     n = $.getUrlParam("num");
     category = c ? c : 1;
     type = t ? t : 1;
-    $("#list-details").load(DETAIL_LIST_PREFIX + c + "_1" + DETAIL_LIST_SUFFIX,function(){
+    $("#list-details").load(DETAIL_LIST_PREFIX + c + "_" + type + DETAIL_LIST_SUFFIX,function(){
 		n ? ajaxTest(n) : ajaxTest(1);
+		$('.fix-box').remove();
 	});
     console.log(c,t,n);
 };
@@ -354,5 +355,6 @@ if($.getUrlParam("category")){
 	$('#pagination-top').remove();
 	$('#pagination-bottom').remove();
 }
+
 
 //console.log($.getUrlParam("category"));

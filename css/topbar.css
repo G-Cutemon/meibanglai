@@ -12,6 +12,11 @@ a {
 ul, ol {
 	list-style: none;
 }
+
+#header-html {
+	margin-bottom: 60px;
+}
+
 /* 固定顶部导航,分层提前,内页导航在main.css的.fix-box */
 header {
 	position: fixed;
@@ -84,10 +89,27 @@ header {
 	.navbar-default .navbar-nav>li>a {
 		color: #ffffff;
 	}
+	.dropdown-submenu:hover>.dropdown-menu {
+	display: block;
+	}
+	.dropdown-submenu>a:after {
+		display: block;
+		content: " ";
+		float: right;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+		border-width: 5px 0 5px 5px;
+		border-left-color: #ccc;
+		margin-top: 5px;
+		margin-right: -10px;
+	}
 }
 
-@media (max-width: 768px) { 
-	.navbar { width: 100%;}	
+@media (max-width: 767px) { 
+	.navbar { width: 100%;}
+	.table { width: 100%;}
 }
 
 @media (max-width: 320px) { 
@@ -108,24 +130,6 @@ header {
 	border-radius: 0 6px 6px 6px;
 }
 
-.dropdown-submenu:hover>.dropdown-menu {
-	display: block;
-}
-
-.dropdown-submenu>a:after {
-	display: block;
-	content: " ";
-	float: right;
-	width: 0;
-	height: 0;
-	border-color: transparent;
-	border-style: solid;
-	border-width: 5px 0 5px 5px;
-	border-left-color: #ccc;
-	margin-top: 5px;
-	margin-right: -10px;
-}
-
 .dropdown-submenu:hover>a:after {
 	border-left-color: #fff;
 }
@@ -140,4 +144,19 @@ header {
 	-webkit-border-radius: 6px 0 6px 6px;
 	-moz-border-radius: 6px 0 6px 6px;
 	border-radius: 6px 0 6px 6px;
+}
+
+.navbar-nav .open .dropdown-submenu>.dropdown-menu>.divider {
+	margin: 6px 0;
+}
+.navbar-nav .open>.dropdown-menu>.divider {
+	margin: 7px 0;
+}
+
+.navbar-nav .open .dropdown-submenu>.dropdown-menu>li>a {
+	padding: 0 40px;
+}
+
+.submenu-title {
+	padding: 10px 15px;
 }

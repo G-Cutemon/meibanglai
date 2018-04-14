@@ -47,22 +47,22 @@
 	<%var DETAILS_URL = '/view/data/school.html';%>
 	<table class="table">
 		<tr class="warning">
-			<th>学校名称</th>
-			<th>培训科目</th>
-			<th>所在地址</th>
-			<th>成立时间</th>
-			<th>学校Logo</th>
+			<th class="col-xs-6 col-lg-4">学校名称</th>
+			<th class="col-xs-6 col-lg-4">培训科目</th>
+			<th class="visible-lg">所在地址</th>
+			<th class="visible-lg">成立时间</th>
+			<th class="visible-lg">学校Logo</th>
 		</tr>
 	<%for (var i = 0; i < data.length; i++) {%>
-		<tr class="active">
+		<tr>
 			<td>
 				<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>">广州合纵连横化妆品有限公司</a>
-			<p>美容美体培训机构/学校</p>
+			<span>美容美体培训机构/学校</span>
 			</td>
 			<td><%:=data[i].school_course%></td>
-			<td><%:=data[i].school_address%></td>
-			<td><%:=data[i].school_create_time%></td>
-			<td><a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="width: 160px;height: 120px;"></a></td>
+			<td class="visible-lg"><%:=data[i].school_address%></td>
+			<td class="visible-lg"><%:=data[i].school_create_time%></td>
+			<td class="visible-lg"><a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="width: 160px;height: 120px;"></a></td>
 	<%}%>
 		</tr>
 	</table>

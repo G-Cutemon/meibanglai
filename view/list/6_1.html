@@ -27,35 +27,39 @@
 	<%var DETAIL_PREFIX = '/view/data/shoptransfer.html';%>
 	<%var DEFAULT_IMAGE_URI = '//meibanglai.com/image/shoptransfer/';%>
 	<table class="table">
+		<tr class="warning">
+			<th class="col-lg-2 visible-lg">门店外观</th>
+			<th class="col-xs-6 col-lg-4">转让信息</th>
+			<th class="col-xs-4">转让费用</th>
+			<th class="visible-lg">门店地址</th>
+			<th></th>
+		</tr>
 		<%for (var i = 0; i < data.length; i++) {%>
 		<tr class="active">
-			<td>
+			<td class="visible-lg">
 				<img src="<%:=DEFAULT_IMAGE_URI%><%:=data[i].image_url.split(";")[0]%>" style="width: 171px; height: 128px;"/>
 			</td>
 			<td>
-				<p>
+				<span>
 					<%:=data[i].transfer_name%>
-				</p>
-				<p>
+				</span>
+				<span>
 					<%:=data[i].address%>
-				</p>
+				</span>
 			</td>
 			<td>
-				<p>
+				<span>
 					租金：<%:=data[i].rental%>
-				</p>
-				<p>
+				</span>
+				<span>
 					转让费：<%:=data[i].transfer_gold%>
-				</p>
+				</span>
 			</td>
-			<td>
+			<td class="visible-lg">
 				<%:=data[i].type%>
 			</td>
 			<td>
-				<%:=data[i].jod_release_time%>
-			</td>
-			<td>
-				<a class="btn btn-primary" href="<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>">查看详情</a>
+				<button class="btn btn-primary" onclick="window.location.href='<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>'">查看详情</button>
 			</td>
 			<%}%>
 		</tr>

@@ -16,7 +16,7 @@ var a_none_ready_simulationClick = function() {
     var d = getQueryString("d");
 
     $.ajax({
-        url: "/data/getInvitation.do",
+        url: "//meibanglai.com/data/getInvitation.do",
         type: "get",
         data: {
             "d":d
@@ -73,16 +73,6 @@ function getQueryString(name) {
     }
     return null;
 }
-
-var li_list_basic_onclick_clickLi = function () {
-    var lis = document.getElementsByClassName("list-basic")[0].getElementsByTagName("li");
-    for (i=0; i<lis.length; i++){
-        lis[i].firstElementChild.onclick = function () {
-            var url = this.dataset.url;
-            window.location.href= "/view/data/index2N.html?category="+url;
-        }
-    }
-};
 
 
 

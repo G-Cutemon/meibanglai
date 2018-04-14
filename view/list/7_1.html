@@ -49,19 +49,19 @@
 	<table class="table">
 		<%for (var i = 0; i < data.length; i++) {%>
 			<tr class="active">
-				<td>
+				<td class="visible-lg col-lg-3">
 					<img src="<%:=data[i].logo_url=="" ? DEFAULT_IMAGE : data[i].logo_url%>"/>
 				</td>
 				<td>
-					<p>公司名称：<%:=data[i].company_name%></p>
-					<p>地址：<%:=data[i].address%></p>
-					<p>联系人：<%:=data[i].principal%></p>
-					<p>手机：<%:=data[i].phone%></p>
-					<p>发货热线：<%:=data[i].telephone%></p>
-					<p>货运市场：<%:=data[i].market%></p>
-					<p>出发站：<%:=data[i].start_site%></p>
-					<p>到达地：<%:=data[i].end_site%></p>
-					<p>发布时间：<%:=formatDate(data[i].updata_time)%></p>
+					<span>公司名称：<%:=data[i].company_name%></span>
+					<span>地址：<%:=data[i].address%></span>
+					<span>联系人：<%:=data[i].principal%></span>
+					<span>手机：<%:=data[i].phone%></span>
+					<span>发货热线：<%:=data[i].telephone%></span>
+					<span>货运市场：<%:=data[i].market%></span>
+					<span>出发站：<%:=data[i].start_site%></span>
+					<span>到达地：<%:=data[i].end_site%></span>
+					<span>发布时间：<%:=formatDate(data[i].updata_time)%></span>
 				</td>
 			</tr>
 		<%}%>

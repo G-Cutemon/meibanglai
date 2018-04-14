@@ -64,8 +64,8 @@
 	background: url(../../image/570-400.jpg) no-repeat;
 }
 
-#pagination-top {
-	margin-top: 140px;
+#pagination-top, #pagination-bottom {
+	margin-bottom: 10px;
 }
 
 .tab-box {
@@ -78,11 +78,21 @@
 		overflow-x: hidden;
 	}
 	
-	#wp .table td {
+	#wp .table top: ;d {
 		padding: 0;
 	}
 	
 	#wp .table td p {
 		width: 235px;
 	}
+}
+
+
+/* 2_1.html */
+.table tr>td>a {
+	display: block;
+}
+
+.table tr>td>span {
+	display: block;
 }

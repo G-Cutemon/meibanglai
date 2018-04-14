@@ -1,6 +1,6 @@
 var startCount = 0;
-var errorPaga = "http://rocketship.com.au/404/";
-var IMAGE_DELETE_URL = "/image/shoptransfer/";
+var errorPaga = "/ErrorFiles/404.html";
+var IMAGE_DELETE_URL = "//meibanglai.com/image/shoptransfer/";
 
 $(document).ready(function () {
     ready();
@@ -17,7 +17,7 @@ var ready = function () {
 var a_none_ready_simulationClick = function() {
     var d = getQueryString("d");
     $.ajax({
-        url: "/data/getShoptransfer.do",
+        url: "//meibanglai.com/data/getShoptransfer.do",
         type: "get",
         data: {
             "d":d
