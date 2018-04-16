@@ -1,3 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="fix-box">
+		<div class="w1190">
+			<dl>
+				<dt>物流快递</dt>
+				<dd>
+					<a data-type="1" class="details-a-click">全国物流</a>
+				</dd>
+				<dd>
+					<a data-type="2" class="details-a-click">快递查询</a>
+				</dd>
+				<dd>
+					<a data-type="3" class="details-a-click">网点查询</a>
+				</dd>
+			</dl>
+		</div>
+	</div>	
+
+	<div id="wp"></div>
+	<div id="result-box">
+		
+	</div>
+</body>
+<script src="/js/data/logistics.js" type="text/javascript" charset="utf-8"></script>
+<script id="tpl" type="text/html">
+	<%var DETAILS_URL = '//meibanglai.com/view/matchMessage/';%>
+	<div class="select-area">
+		<div class="area">
+			<select id="s_province" name="s_province"></select>
+			<select id="s_city" name="s_city"></select>
+			<select id="s_county" name="s_county"></select>
+			<input type="text" id="s_town" placeholder="乡/镇  如:玉溪镇" />
+			<button type="button" id="search">搜索</button>
+		</div>
+	</div>
+
+	
+</script>
+
+<script id="result-tpl" type="text/html">
+	<%var IMAGE_URL = '//meibanglai.com/image/logistics/';%>
+	<%var DEFAULT_IMAGE = IMAGE_URL + 'default.png';%>
+	<table class="table">
+		<%for (var i = 0; i < data.length; i++) {%>
+			<tr class="active">
+				<td class="visible-lg col-lg-3">
+					<img src="<%:=data[i].logo_url=="" ? DEFAULT_IMAGE : data[i].logo_url%>"/>
+				</td>
+				<td>
+					<span>公司名称：<%:=data[i].company_name%></span>
+					<span>地址：<%:=data[i].address%></span>
+					<span>联系人：<%:=data[i].principal%></span>
+					<span>手机：<%:=data[i].phone%></span>
+					<span>发货热线：<%:=data[i].telephone%></span>
+					<span>货运市场：<%:=data[i].market%></span>
+					<span>出发站：<%:=data[i].start_site%></span>
+					<span>到达地：<%:=data[i].end_site%></span>
+					<span>发布时间：<%:=formatDate(data[i].updata_time)%></span>
+				</td>
+			</tr>
+		<%}%>
+	</table>
+	<hr />
+</script>
+</html>
+	<script>
+    $(document).ready(function () {
+        var page = document.getElementById("page");
+        if (page!=null) page.innerHTML = "";
+        button_none_click_seleData();
+        a_details_click_showList();
+    });
+    button_none_click_seleData = function (num) {
+        document.getElementById("search").onclick = function () {
+            var Ecom = document.getElementById("com");
+            var com = Ecom.options[Ecom.selectedIndex].value;
+            var num = document.getElementById("num").value;
+            if ( num != ""){
+                $.ajax({
+                    url: "//meibanglai.com/data/queryExpressage.do",
+                    type:"post",
+                    data: {"com":com,
+                        "num":num
+                    },
+                    success: function (data) {
+                        if(data.code == 200) {
+                            document.getElementById("show").innerHTML = "";//清空
+                            for (var i = 0; i < data.data.length; i++) {
+                                var d = data.data[i];
+                                console.log(d);
+                                showData(d);
+
+                                var show = document.getElementById("show").children;
+                                $(show[show.length-2]).fadeIn(i*250);//渐显
+                            }
+                        }else{
+                            var page = document.getElementById("page");
+                            if(page != null)
+                                page.innerHTML = "";
+                        }
+                    }
+                })
+            }else {
+                alert("请输入快递单号");
+            }
+        }
+    };
+</script>
 <script src="/js/public/area.js"></script>
 <script>
     $(document).ready(function () {
@@ -106,7 +222,7 @@
 </script>
 <script>
 
-    var IMAGE_URL = "/image/logistics/";
+    var IMAGE_URL = "//meibanglai.com/image/logistics/";
     var DEFAULT_IMAGE = IMAGE_URL+"default.png";
     var c1 = document.createElement("div");
     c1.classList.add("hidden-xs");
@@ -193,44 +309,26 @@
 
 </script>
 
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="7" class="details-header">物流快递</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-Nclick">全国物流</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">快递查询</a></li>
-            <li><a  data-type="3" class="details-a-click">网点查询</a></li>
-        </ul>
-    </div>
-</div>
-<div class="hidden-xs">
-    <hr class="hr1"/>
-</div>
-
-<div class="select-area">
-    <div class="area">
-        <select id="s_province" name="s_province"></select>  
-        <select id="s_city" name="s_city" ></select>  
-        <select id="s_county" name="s_county"></select>
-        <input type="text" id="s_town" placeholder="乡/镇  如:玉溪镇" />
-        <button type="button" id="search">搜索</button>
-    </div>
-</div>
-<div id="show">
-    <!--<div class="row">-->
-    <!--<div class="hidden-xs col-sm-2 col-md-2 box7-img">-->
-    <!--<img src="/image/school/M2E1NTA5MGQyNjQzMjEzMmY0MDI0.jpg">-->
-    <!--</div>-->
-    <!--<div class="col-xs-12 col-sm-8 col-md-8 box7-context">-->
-    <!--<p>公司名称：<a>广州松正物流</a></p>-->
-    <!--<p>地址：广州市白云区石井镇庆丰物流市场北一区225-226档</p>-->
-    <!--<p>联系人：袁先生</p>-->
-    <!--<p>手机：18241956231</p>-->
-    <!--<p>发货热线：13512781299</p>-->
-    <!--<p>货运市场：庆丰物流 <span>2018.02.03</span></p>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<hr>-->
-</div>
+<script id="result-tpl" type="text/html">
+	<%var IMAGE_URL = '//meibanglai.com/image/logistics/';%>
+	<%var DEFAULT_IMAGE = IMAGE_URL + 'default.png';%>
+	<table class="table">
+		<%for (var i = 0; i < data.length; i++) {%>
+		<tr class="active">
+			<td class="visible-lg col-lg-3">
+				<img src="<%:=data[i].logo_url==" " ? DEFAULT_IMAGE : data[i].logo_url%>"/>
+			</td>
+			<td>
+				<span>公司名称：<%:=data[i].company_name%></span>
+				<span>网点名称：<%:=data[i].address%></span>
+				<span>网点联系人：<%:=data[i].principal%></span>
+				<span>联系人电话：<%:=data[i].phone%></span>
+				<span>快递网点联系方式：<%:=data[i].telephone%></span>
+				<span>配送区域：<%:=data[i].market%></span>
+				<span>不配送区域：<%:=data[i].start_site%></span>
+			</td>
+		</tr>
+		<%}%>
+	</table>
+	<hr />
+</script>

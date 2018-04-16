@@ -1,5 +1,5 @@
 var startCount = 0;
-var errorPaga = "http://rocketship.com.au/404/";
+var errorPaga = "/ErrorFiles/404.html";
 
 $(document).ready(function () {
     ready();
@@ -8,12 +8,12 @@ $(document).ready(function () {
 
 var ready = function () {
     $(".classname img").addClass("carousel-inner img-responsive img-rounded");
-    li_list_basic_onclick_clickLi();
+//  li_list_basic_onclick_clickLi();
 };
 
 
 var a_none_ready_simulationClick = function() {
-    var d = getQueryString("d");
+    var d = $.getUrlParam("d");
 
     $.ajax({
         url: "//meibanglai.com/data/getInvitation.do",
@@ -65,7 +65,7 @@ var a_none_ready_simulationClick = function() {
 };
 
 //获取参数地址栏参数
-function getQueryString(name) {
+$.getUrlParam = function(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     var r = window.location.search.substr(1).match(reg);
     if (r != null) {

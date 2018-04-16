@@ -21,7 +21,6 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0 auto;
-    width: 150px;
 }
 
 .basic{
@@ -34,9 +33,13 @@
     font-size: 16px;
 }
 
-hr{
+.row hr{
     border-bottom: 1px dashed  #d4d4d4;
     border-top: 0px;
+}
+
+#reinforce tr>td {
+	border: 0;
 }
 
 #reinforce{

@@ -35,10 +35,10 @@
    };%>
 	<table class="table">
 		<tr class="warning">
-			<th class="col-xs-3 col-lg-2">求职者姓名</th>
-			<th class="col-xs-3 col-lg-3">求职者信息</th>
+			<th class="col-xs-2 col-lg-2">求职者姓名</th>
+			<th class="col-xs-4 col-lg-4">求职者信息</th>
 			<th class="col-xs-3 col-lg-2">待遇要求</th>
-			<th class="col-xs-3 col-lg-3">职位/地点</th>
+			<th class="visible-lg col-lg-3">职位/地点</th>
 			<th></th>
 		</tr>
 		<%for (var i = 0; i < data.length; i++) {%>
@@ -49,7 +49,7 @@
 			<td>
 				<span><%:=data[i].sex ? "男" : "女"%>&nbsp;|&nbsp;<%:=data[i].age%>&nbsp;|&nbsp;<%:=data[i].experience%>&nbsp;|&nbsp;<%:=educationToString(data[i].education)%></span>
 			</td>
-			<td class="visible-lg">
+			<td>
 				<%:=data[i].job_treatment%>
 			</td>
 			<td class="visible-lg">

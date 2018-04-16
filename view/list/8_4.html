@@ -1,3 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div class="fix-box">
+			<div class="w1190">
+				<dl>
+					<dt>便民服务</dt>
+					<dd>
+						<a data-type="1" class="details-a-click">美容店家</a>
+					</dd>
+					<dd>
+						<a data-type="2" class="details-a-click">装修服务</a>
+					</dd>
+					<dd>
+						<a data-type="3" class="details-a-click">广告制作</a>
+					</dd>
+					<dd>
+						<a data-type="4" class="details-a-click">包材包装</a>
+					</dd>
+					<dd>
+						<a data-type="5" class="details-a-click">代加工</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div id="wp"></div>
+	</body>
+	<script id="tpl" type="text/html">
+		<%var IMAGE_URL = '/view/data/details.html';%>
+		<table class="table">
+			<%for (var i = 0; i < data.length; i++) {%>
+			<tr class="active">
+				<td class="col-sm-3">
+					<span><a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a></span>
+					<img src="<%:=data[i].image_url%>" width="160px" height="120px" />
+				</td>
+				<td colspan="8">
+					<span>联系人：<%:=data[i].contact_people%></span>
+					<span>联系电话：<%:=data[i].contact_mobile%></span>
+					<span>传真：<%:=data[i].fax%></span>
+					<span>座机：<%:=data[i].contact_tellphone%></span>
+					<span><%:=data[i].product_name%></span>
+					<span><%:=data[i].product_describe%></span>
+				</td>
+			</tr>
+			<%}%>
+		</table>
+		<hr />
+	</script>
+
+</html>
+
+
 <script>
     //    var DETAILS_URL = "/view/data/"
     var show = document.getElementById("show");
@@ -79,24 +141,3 @@
 
 </script>
 
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="8" class="details-header">便民服务</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-Nclick">美容店家</a></li>
-            <li><a  data-type="2" class="details-a-Nclick">装修服务</a></li>
-            <li><a  data-type="3" class="details-a-Nclick">广告制作</a></li>
-            <li><a  data-type="4" class="details-a-click">包材包装</a></li>
-            <li><a  data-type="5" class="details-a-Nclick">代加工</a></li>
-        </ul>
-    </div>
-</div>
-<div class="hidden-xs">
-    <hr class="hr1"/>
-</div>
-
-<div id="show">
-
-</div>

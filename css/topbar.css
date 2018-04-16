@@ -47,6 +47,10 @@ header {
 	position: fixed;
 }*/
 
+.navbar-size {
+	max-height: 400px;
+}
+
 .topbar-info {
     position: relative;
     float: right;

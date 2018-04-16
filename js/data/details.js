@@ -4,17 +4,14 @@ var input = document.getElementById("startP"); //星星 的默认值 -> 后续�
 $(document).ready(function () {
     ready();
     a_none_ready_simulationClick();
-    li_list_basic_onclick_clickLi();
 });
 
 var ready = function () {
 
     //选项框
-    $.Huitab("#tab_demo .tabBar span", "#tab_demo .tabCon", "current", "click", "0");
-    $(".classname img").addClass("carousel-inner img-responsive img-rounded");
 
     //绑定评价星星
-    li_starts_ready_bindingOfStarts();
+    
 
 };
 
@@ -76,10 +73,10 @@ var li_starts_ready_bindingOfStarts = function(){
             if(startCount>=1){
                 return ;
             }
-            clearAllStart();
-            for (var i = 0; i < input.value; i++) {
-                n[i].className = "on";
-            }
+//          clearAllStart();
+//          for (var i = 0; i < input.value; i++) {
+//              n[i].className = "on";
+//          }
     
         }
     }
@@ -89,18 +86,18 @@ var li_starts_ready_bindingOfStarts = function(){
             n[i].className = "";
         }
     }
-    //模拟一次滑动给星星上色
-    n[input.value-1].onmouseover();
+//  //模拟一次滑动给星星上色
+//  n[input.value-1].onmouseover();
 }
 
 var a_none_ready_simulationClick = function() {
     //category
     //DataId
-    var c = getQueryString("c");
-    var d = getQueryString("d");
+    var c = $.getUrlParam("c");
+    var d = $.getUrlParam("d");
 
     $.ajax({
-        url: "/data/getData.do",
+        url: "//meibanglai.com/data/getData.do",
         type: "post",
         data: {"c":c,
             "d":d
@@ -108,19 +105,23 @@ var a_none_ready_simulationClick = function() {
         dataType: "json",
         success: function(data) {
             console.log(data);
+            var html = template(document.getElementById('tpl').innerHTML, data);
+            //	console.log(html);
+            document.getElementById('company-info').innerHTML = html;
+            li_starts_ready_bindingOfStarts();
             //填数据
-            if(data.code==200){
-                var i = document.createElement("img");
-                i.src=data.data.image_url;
-                i.setAttribute("style","height: 130px;width: 180;")
-                // i.height="75px";i.width="75px";
-                document.getElementById("companyImage").appendChild(i);
-                document.getElementById("company").innerHTML=data.data.shop_name;
-                document.getElementById("phone").innerHTML="手机号码："+data.data.phone;
-                document.getElementById("address").innerHTML="地址："+data.data.address;
-                var newDate = new Date(data.data.up_date * 1000);
-                document.getElementById("update").innerHTML="更新时间："+newDate.toLocaleDateString();
-            }
+//          if(data.code==200){
+//              var i = document.createElement("img");
+//              i.src=data.data.image_url;
+//              i.setAttribute("style","height: 130px;width: 180;")
+//              // i.height="75px";i.width="75px";
+//              document.getElementById("companyImage").appendChild(i);
+//              document.getElementById("company").innerHTML=data.data.shop_name;
+//              document.getElementById("phone").innerHTML="手机号码："+data.data.phone;
+//              document.getElementById("address").innerHTML="地址："+data.data.address;
+//              var newDate = new Date(data.data.up_date * 1000);
+//              document.getElementById("update").innerHTML="更新时间："+newDate.toLocaleDateString();
+//          }
         }
     })
 
@@ -128,7 +129,7 @@ var a_none_ready_simulationClick = function() {
 };
 
 //获取参数地址栏参数
-function getQueryString(name) {
+$.getUrlParam = function(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     var r = window.location.search.substr(1).match(reg);
     if (r != null) {

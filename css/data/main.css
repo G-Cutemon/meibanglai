@@ -85,14 +85,30 @@
 	#wp .table td p {
 		width: 235px;
 	}
+	
+	.table tr>td {
+		font-size: 1rem;
+	}
+	.table tr>th {
+		font-size: 1rem;
+	}
+	
+	.table tr>td>a {
+		font-size: 1rem;
+	}
+	
+	.table tr>td>span {
+		font-size: 1rem;
+	}
+	
+	.table tr>td>button {
+		font-size: 1rem;
+	}
 }
 
 
 /* 2_1.html */
-.table tr>td>a {
+.table tr>td>a,.table tr>td>span {
 	display: block;
 }
 
-.table tr>td>span {
-	display: block;
-}

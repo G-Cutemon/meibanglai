@@ -1,84 +1,57 @@
-<script>
-    //    var DETAILS_URL = "/view/data/"
-    var show = document.getElementById("show");
+<!DOCTYPE html>
+<html lang="zh">
 
-    var row = document.createElement("div");
-    row.classList.add("row");
-    row.classList.add("marginTop1r");
-    row.setAttribute("style","display: none;");
-    var c1 = document.createElement("div");
-    c1.classList.add("col-xs-12");
-    c1.classList.add("col-sm-12");
-    c1.classList.add("col-md-12");
-    var c2 = document.createElement("div");
-    c2.classList.add("hidden-xs");
-    c2.classList.add("col-sm-2");
-    c2.classList.add("col-md-2");
-    var c3 = document.createElement("div");
-    c3.classList.add("col-xs-12");
-    c3.classList.add("col-sm-10");
-    c3.classList.add("col-md-10");
-    var showData = function (data) {
-        var a = document.createElement("a");
-        a.setAttribute("style","color: #000000;");
-//        a.setAttribute("href", "/view/data/details.html?d="+data.id);
-        var h1 = document.createElement("h1");
-        h1.innerHTML = data.company_name;
-        a.append(h1);
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
 
-//        var img = document.createElement("img");
-//        img.setAttribute("src", data.image_url);
-//        img.setAttribute("class","details-1-img");
+	<body>
+		<div class="fix-box">
+			<div class="w1190">
+				<dl>
+					<dt>便民服务</dt>
+					<dd>
+						<a data-type="1" class="details-a-click">美容店家</a>
+					</dd>
+					<dd>
+						<a data-type="2" class="details-a-click">装修服务</a>
+					</dd>
+					<dd>
+						<a data-type="3" class="details-a-click">广告制作</a>
+					</dd>
+					<dd>
+						<a data-type="4" class="details-a-click">包材包装</a>
+					</dd>
+					<dd>
+						<a data-type="5" class="details-a-click">代加工</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
 
-        var p = document.createElement("p");
-        var p1 = p.cloneNode(true);
-        var p2 = p.cloneNode(true);
-        var p3 = p.cloneNode(true);
-        p1.append("所在地："+data.company_adress);
-        p2.append("主营产品："+data.company_product);
-        p3.append("经营范围："+data.company_industry);
+		<div id="wp"></div>
+	</body>
+	<script id="tpl" type="text/html">
+		<%var IMAGE_URL = '/view/data/details.html';%>
+		<table class="table">
+			<%for (var i = 0; i < data.length; i++) {%>
+			<tr class="active">
+				<td class="col-sm-3">
+					<span><a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a></span>
+					<img src="<%:=data[i].image_url%>" width="160px" height="120px" />
+				</td>
+				<td colspan="8">
+					<span>所在地：<%:=data[i].company_adress%></span>
+					<span>主要产品：<%:=data[i].company_product%></span>
+					<span>经营范围：<%:=data[i].company_industry%></span>
+				</td>
+			</tr>
+			<%}%>
+		</table>
+		<hr />
+	</script>
 
-        var Nc1 = c1.cloneNode(true);
-//        var Nc2 = c2.cloneNode(true);
-        var Nc3 = c3.cloneNode(true);
-        var Nrow = row.cloneNode(true);
-        Nc3.append(p1);
-        Nc3.append(p2);
-        Nc3.append(p3);
-
-//        Nc2.append(img);
-
-        Nc1.append(a);
-
-//        Nrow.setAttribute("href",);
-        Nrow.append(Nc1);
-//        Nrow.append(Nc2);
-        Nrow.append(Nc3);
-
-        show.append(Nrow);
-        show.appendChild(document.createElement("hr"))
-    }
-
-</script>
-
-<div class="row">
-    <div class="hidden-xs col-sm-2 col-md-2">
-        <a data-category="8" class="details-header">便民服务</a>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-8">
-        <ul class="details-ul">
-            <li><a  data-type="1" class="details-a-Nclick">美容店家</a></li>
-            <li><a  data-type="2" class="details-a-click">装修服务</a></li>
-            <li><a  data-type="3" class="details-a-Nclick">广告制作</a></li>
-            <li><a  data-type="4" class="details-a-Nclick">包材包装</a></li>
-            <li><a  data-type="5" class="details-a-Nclick">代加工</a></li>
-        </ul>
-    </div>
-</div>
-<div class="hidden-xs">
-    <hr class="hr1"/>
-</div>
-
-<div id="show">
-
-</div>
+</html>
