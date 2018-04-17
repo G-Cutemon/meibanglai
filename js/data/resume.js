@@ -31,6 +31,7 @@ var a_none_ready_simulationClick = function() {
         },
         dataType: "json",
         success: function(data) {
+        	console.log(data);
         	var html = template(document.getElementById('tpl').innerHTML, data);
         	//	console.log(html);
         	document.getElementById('wp').innerHTML = html;

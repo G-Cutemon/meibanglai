@@ -4,6 +4,7 @@
 	<meta charset="UTF-8" />
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 	<!--<meta http-equiv="X-UA-Compatible" content="ie=edge" />-->
+	<link rel="stylesheet" type="text/css" href="/css/data/1_1.css"/>
 	<title>Document</title>
 </head>
 <body>
@@ -101,22 +102,38 @@
 
 <script id="tpl" type="text/html">
 	<%var LOGO_URL = '//meibanglai.com/image/mbhbrand/';%>
-	<table class="table">
+	<!--<table class="list">-->
 	<%for (var i = 0; i < data.length; i++) {%>
-		<tr>
-			<td class="col-sm-3">
-				<a href="#" style="color: #000000;font-weight: bold;font-size: 1rem;"><%:=data[i].brand_name%></a>
-				<img src="<%:=LOGO_URL%><%:=data[i].brand_logo%>" style="max-height: 140px; max-width: 140px;">
-			</td>
-				<td>
-					<span style="font-weight: bold;font-size: 1rem;">公司名：<%:=data[i].campany_name%></span>
-					<span>参展产品：<%:=data[i].product_name%></span>
-					<span class="show_box1-context_product">产品介绍：<%:=data[i].product%></span>
-					<span>品牌官网：<%:=data[i].website%></span>
-				</td>
-		</tr>
+		<div class="list">
+			<div class="sort">
+				<ul class="clearfix">
+					<li class="fl one">
+						<img src="<%:=LOGO_URL%><%:=data[i].brand_logo%>" />
+					</li>
+				
+					<li class="fl two">
+						<p style="font-weight: bold;font-size: 1rem;">公司名：
+							<%:=data[i].campany_name%>
+						</p>
+						<p>参展产品：
+							<%:=data[i].product_name%>
+						</p>
+						<p class="show_box1-context_product">产品介绍：
+							<%:=data[i].product%>
+						</p>
+						<p>品牌官网：
+							<%:=data[i].website%>
+						</p>
+					</li>
+					<li class="fl three">
+						<a href="#">联系方式</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
 	<%}%>
-	</table>
+	<!--</table>-->
 	<hr>
 </script>
 </html>

@@ -14,6 +14,8 @@
     margin-bottom: 50px;
 }
 .resumeTop{
+	width: 100%;
+	margin-bottom: 20px;
     background-image: url('/image/resumeBackground.jpg');
     background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;
 }
@@ -89,48 +91,11 @@
     line-height: 26px;
 }
 
-/*ul栏======================================================================*/
-.box-c2{
-    background-color: #FF008C;
-    margin-top: 2rem;
-}
-.list-basic{
-    width: auto;
-    height: 2.5rem;
-}
-.list-basic >li{
-    float: left;
-}
-.list-basic >li >a{
-    color: #FFFFFF;
-    font-size: 0.95rem;
-    font-family: 新宋体;
-    line-height: 2.5rem;
-    padding: 0 1.3rem;
-    display: inline-block;
-}
-.list-basic >li:hover{
-    background-color: #eb007d;
-}
-/*==========================================================================*/
-
-
-
-
-
-
-
-
-
 
 
 
 
 /* 通配符模式,给col-xs-*加上margin */
-[class^="col-xs-"]{
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
 
 [id^="nav-detailed-li_"] >a:link{
 	color: #FFF
@@ -144,54 +109,6 @@
     width: auto;
     height: auto;
     /* background: url(/wfly/image/public/loading.gif) 50% no-repeat; */
-}
-
-/* 搜索框 */
-.search-div{
-	padding: 7px;
-	padding-right: 20px;
-	background-color: #e6e6e6;
-}
-.search {
-		padding: 1px;
-	}
-@media (min-width: 768px){
-	.search {
-		margin-left:10%;
-		margin-right:30%;
-		background-color: #ff008c;
-		padding: 1px;
-	}
-	.search-div{
-		padding: 7px;
-		padding-right: 20px;
-		background-color: #FFF;
-	}
-}
-.search>input {
-	width: 80%;
-	height: 30px
-}
-.search>a{
-	display: inline-block;
-	width: 15%;
-	text-align:center;
-}
-
-
-/* 导航栏 */
-#detailed{
-    background-color:#ff008c;
-    height:2.5rem;
-}
-.nav-detailed-li{
-    float: left;
-    padding: 0.7rem 2rem;
-    padding-bottom: 0.6rem;
-    color: #FFFFFF;
-}
-#nav-detailed > ul >li:hover{
-    background-color: #db047a;
 }
 
 /* 模板 */

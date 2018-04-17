@@ -75,7 +75,7 @@ header {
 
 
 @media (min-width: 1191px) { 
-	.container-fluid { width: 1190px;}
+	.navbar>.container-fluid { width: 1190px;}
 
 }
 

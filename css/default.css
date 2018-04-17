@@ -169,3 +169,6 @@ li,p,ul {
 
 /* 自定义设置开始 */
 
+.border0 {
+	border: 0!important;
+}
