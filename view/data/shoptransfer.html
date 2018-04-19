@@ -12,7 +12,8 @@
     <!-- 移动设备优先(优先栅格布局-水平排列) 进制用户缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link href="/css/public/default.css" rel="stylesheet" type="text/css" />
+    <link href="/css/default.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/public/easySlider.css"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link href="/css/data/shoptransfer.css" rel="stylesheet" type="text/css" />
 
@@ -24,102 +25,8 @@
 <body>
 <div id="header-html"></div>
 
-<div class="container-fluid box-f">
-
-    <div class="row box-c3">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-md-10">
-                    <div class="row inter-box">
-                        <div class="col-xs-12 col-sm-7 col-md-7" >
-                            <div id="slider-3">
-                                <div class="slider">
-                                    <div class="bd">
-                                        <ul id="ul">
-                                            <!--<li><a href="#" target="_blank"><img src="/image/1.png" ></a></li>-->
-                                            <!--<li><a href="#" target="_blank"><img src="/image/1.png" ></a></li>-->
-                                            <!--<li><a href="#" target="_blank"><img src="/image/1.png" ></a></li>-->
-                                            <!--<li><a href="#" target="_blank"><img src="/image/1.png" ></a></li>-->
-                                        </ul>
-                                    </div>
-                                    <ol class="hd cl rectangle" id="ol">
-                                        <!--<li>1</li>-->
-                                        <!--<li>2</li>-->
-                                        <!--<li>3</li>-->
-                                        <!--<li>4</li>-->
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-5 col-md-5 " style="border-left: 10px solid #f9f9f9;">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <p style="color: red">
-                                        <span style="font-size: 2.3rem" id="gold">4500</span><a>元/月&nbsp;&nbsp;&nbsp;
-                                        转让费：</a><span id="transferGold">10.8万元</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5 col-md-5 context">
-                                    <p>面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积：<span>100m2</span></p>
-                                    <p>面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宽：<span>100m2</span></p>
-                                    <p>层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：<span>100m2</span></p>
-                                    <p>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深：<span>100m2</span></p>
-                                    <p>楼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;层：<span>100m2</span></p>
-                                </div>
-                                <div class="col-xs-12 col-sm-7 col-md-7 context">
-                                    <p>付款方式：<span>100m2</span></p>
-                                    <p>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：<span>100m2</span></p>
-                                    <p>剩余租期：<span>100m2</span></p>
-                                    <p>经营行业：<span>100m2</span></p>
-                                    <p>经营状态：<span>100m2</span></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12 context-x">
-                                    <hr>
-                                    <p>所在地址：<span>100m2100m2</span></p>
-                                    <h1 style="font-size: 1.2rem;">联系方式<span> </span></h1>
-                                    <a><span>陈先生：</span>13111919211</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row box-details">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div id="tab_demo" class="HuiTab marginNone tabBar-outerBorder">
-                                <div class="tabBar clearfix fontSpan">
-                                    <span class="t current" id="0">配备</span>
-                                    <span id="1" class="t">描述</span>
-                                </div>
-                                <div class="tabCon content display_block">
-                                    <div class="box-details-content ">
-                                        <h1>配　备</h1><br>
-                                    </div>
-                                </div>
-                                <div class="tabCon content display_none">
-                                    <div class="box-details-content">
-                                        <h1>描　述</h1><br>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hidden-xs col-sm-2 col-md-2">
-                    <div class="row">
-                        <!-- <div class="col-xs-12">新闻预留</div> -->
-                        <div class="col-xs-12">
-                            <img class="img-responsive center-block" src="/image/public/blank.gif" data-echo="/image/hot4.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="wp">
+	
 </div>
 
 <div id="footer-html"></div>
@@ -128,8 +35,119 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 <script charset="UTF-8" type="text/javascript" src="/js/data/shoptransfer.js"></script>
-<script>
-	$("#header-html").load("/topbar.html"); 	$("#footer-html").load("/footer.html");
-</script>
+<script src="/js/public/template.js"></script>
 
+<script>
+	$("#header-html").load("/topbar.html");
+	$("#footer-html").load("/footer.html");
+</script>
+<script id="tpl" type="text/html">
+	<%var IMAGE_DELETE_URL = '//meibanglai.com/image/shoptransfer/';%>
+	<%var img_slide = data.image_url.split(";");%>
+	<div class="container-fluid box-f">
+	
+		<div class="row box-c3">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="row inter-box">
+							<div class="col-xs-12 col-sm-7 col-md-7">
+								<div id="slider">
+									<ul class="slides clearfix">
+										<%for (var i = 0; i < img_slide.length; i++) {%>
+											<li><img class="responsive" src="<%:=IMAGE_DELETE_URL%><%:=img_slide[i]%>"></li>
+										<%}%>
+									</ul>
+									<ul class="controls">
+										<li><img src="/image/public/prev.png" alt="previous"></li>
+										<li><img src="/image/public/next.png" alt="next"></li>
+									</ul>
+									<ul class="pagination">
+										<%for (var i = 0; i < img_slide.length; i++) {%>
+										<li></li>
+										<%}%>
+									</ul>
+								</div>
+								<!--<div id="slider-3">
+									<div class="slider">
+										<div class="bd">
+											<ul id="ul">
+											</ul>
+										</div>
+										<ol class="hd cl rectangle" id="ol">
+										</ol>
+									</div>
+								</div>-->
+							</div>
+							<div class="col-xs-12 col-sm-5 col-md-5 " style="border-left: 10px solid #f9f9f9;">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-12">
+										<p style="color: red">
+											<span style="font-size: 2.3rem" id="gold">4500</span>
+											<a>元/月&nbsp;&nbsp;&nbsp; 转让费：
+											</a><span id="transferGold">10.8万元</span>
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<ul class="col-xs-12 context">
+										<li>面积：</li>
+										<li>面宽：</li>
+										<li>层高：</li>
+										<li>进深：</li>
+										<li>楼层：</li>
+										<li>付款方式：</li>
+										<li>类型：</li>
+										<li>剩余租期：</li>
+										<li>经营行业：</li>
+										<li>经营状态：</li>
+									</ul>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-12 context-x">
+										<hr>
+										<p>所在地址：<span>100m2100m2</span></p>
+										<h1 style="font-size: 1.2rem;">联系方式<span> </span></h1>
+										<a><span>陈先生：</span>13111919211</a>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div class="row box-details">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div id="tab_demo" class="HuiTab marginNone tabBar-outerBorder">
+									<div class="tabBar clearfix fontSpan">
+										<span class="t current" id="0">配备</span>
+										<span id="1" class="t">描述</span>
+									</div>
+									<div class="tabCon content display_block">
+										<div class="box-details-content ">
+											<h1>配　备</h1><br>
+										</div>
+									</div>
+									<div class="tabCon content display_none">
+										<div class="box-details-content">
+											<h1>描　述</h1><br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="hidden-xs col-sm-2 col-md-2">
+						<div class="row">
+							<!-- <div class="col-xs-12">新闻预留</div> -->
+							<div class="col-xs-12">
+								<img class="img-responsive center-block" src="/image/public/blank.gif" data-echo="/image/hot4.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<script src="/js/public/easySlider.js" type="text/javascript" charset="utf-8"></script>
 </html>
