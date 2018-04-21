@@ -97,12 +97,13 @@ var ajaxTest = function(num){
             	//可选，是否展示共{}页，默认true
             	isShowTotalPage: true,
             	//可选，是否需要重新设置当前页码及总页数，默认false，如果设为true，那么在请求服务器返回数据时，需要调用setPage方法
-            	isResetPage: false,
-            	//必选，回掉函数，返回参数：第一个参数为页码，第二个参数为每页显示N条
+            	isResetPage: true,
+            	//必选，回调函数，返回参数：第一个参数为页码，第二个参数为每页显示N条
             	callBack: function(currPage, pageSize) {
             		c = $.getUrlParam("category");
             		t = $.getUrlParam("type");
             		n = currPage;
+            		total = data.totalPage;
             		category = c ? c : 1;
             		type = t ? t : 1;
             		history.pushState(null, null, "?category=" + category + "&type=" + type + "&num=" + n);
@@ -117,8 +118,16 @@ var ajaxTest = function(num){
 						success: function(data) {
 							// 请求数据成功后加载template模板
 							var html = template(document.getElementById('tpl').innerHTML, data);
-							//	console.log(html);
+//								console.log(data.totalPage);
 							document.getElementById('wp').innerHTML = html;
+//							$("#pagination-top").whjPaging("getPage");
+							$("#pagination-top").whjPaging("setPage", n, total);
+							$("#pagination-bottom").whjPaging("setPage", n, total);
+							$("#pagination-bottom .whj_hover").click(function() {
+								$("html,body").animate({
+									scrollTop: 0
+								}, 500);
+							});
 						}
 					});
             					
@@ -127,6 +136,11 @@ var ajaxTest = function(num){
             };
             $("#pagination-top").whjPaging(options);
             $("#pagination-bottom").whjPaging(options);
+            $("#pagination-bottom .whj_hover").click(function() {
+            	$("html,body").animate({
+            		scrollTop: 0
+            	}, 500);
+            });
             
             
 //          if(data.code == 200) {

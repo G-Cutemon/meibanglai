@@ -12,8 +12,9 @@
     <!-- 移动设备优先(优先栅格布局-水平排列) 进制用户缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link href="/css/public/rasterize.css" rel="stylesheet" type="text/css" />
-    <link href="/css/public/default.css" rel="stylesheet" type="text/css" />
+    <link href="/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="/css/data/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link href="/css/data/school.css" rel="stylesheet" type="text/css" />
 
     <meta name="Keywords" content="美帮来美业服务，行业招聘；品牌招商；美业资讯；培训学校等综合平台">
@@ -22,112 +23,88 @@
 </head>
 
 <body>
-<div id="header_html"></div>
+<div id="header-html"></div>
 
-<div class="container-fluid box-f">
-    <div class="row box-c1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-2 col-md-2">
-                    <a href="/index.html"><img class="logo" src="/image/logo.png"></a>
-                </div>
-                <div class="col-xs-12 col-sm-1 col-md-1"></div>
-                <div class="col-xs-12 col-sm-5 col-md-5">
-                    <p class="search">
-                        <input type="search" placeholder="请输入"/><button>搜索</button>
-                    </p>
-                    <p class="search-p">
-                        <a href="#">美容 | 美发 | 美甲 | 化妆 | 仪器 | 培训 | 招聘</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="wp">
 
-    <div class="row box-c2">
-        <div class="container">
-            <div class="row">
-                <div class="hidden-xs col-sm-12 col-md-12">
-                    <ul class="list-basic">
-                        <li><a data-url="1">美业品牌</a></li>
-                        <li><a data-url="2">培训教学</a></li>
-                        <li><a data-url="3">全球展会</a></li>
-                        <li><a data-url="4">美妆资讯</a></li>
-                        <li><a data-url="5">美业招聘</a></li>
-                        <li><a data-url="6">门店转让</a></li>
-                        <li><a data-url="7">物流快递</a></li>
-                        <li><a data-url="8">便民服务</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row box-c3">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-9 col-md-9">
-                    <div class="row inter-box">
-                        <!--标题 公司-->
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="row school-header">
-                                <div class="col-xs-12 col-sm-3 col-md-3 school-header-image" >
-                                </div>
-                                <div class="col-xs-12 col-sm-9 col-md-9 school-header-context">
-                                    <h1> </h1>
-                                    <p>机构类型：<span> </span></p>
-                                    <p>所属校区：<span> </span></p>
-                                    <p>成立时间：<span> </span></p>
-                                    <p>
-                                        学校面积：<span> </span>
-                                        联系电话：<span> </span>
-                                    </p>
-                                    <p>
-                                        开班课程：<span> </span>
-                                    </p>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <!--要求-->
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="row school-context">
-                                <div class="col-xs-12 col-sm-12 col-md-12 school-context-box">
-                                    <div class="school-context-box-header">
-                                        <h1>学校简介</h1>
-                                    </div>
-                                    <p id="context">
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="hidden-xs col-sm-3 col-md-3">
-                    <div class="row">
-                        <!-- <div class="col-xs-12">新闻预留</div> -->
-                        <div class="col-xs-12">
-                            <img class="img-responsive center-block" src="/image/public/blank.gif" data-echo="/image/hot4.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
-
-
-
-<div id="bottom_html" class="hidden-xs"></div>
+<div id="footer-html"></div>
 
 </body>
-<script charset="UTF-8" type="text/javascript" src="/js/public/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 <script charset="UTF-8" type="text/javascript" src="/js/data/school.js"></script>
+<script src="/js/public/template.js"></script>
 <script>
 	$("#header-html").load("/topbar.html"); 	$("#footer-html").load("/footer.html");
 </script>
-
+<script id="tpl" type="text/html">
+	<%var IMAGE_DELETE_URL = "//meibanglai.com/image/school/";%>
+	<div class="container-fluid box-f">
+		<div class="row box-c3">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-9 col-md-9">
+						<div class="row inter-box">
+							<!--标题 公司-->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="row school-header">
+									<div class="hidden-xs col-md-3 school-header-image">
+										<img src="<%:=IMAGE_DELETE_URL%><%:=data.logo_url%>"/>
+									</div>
+									<div class="col-xs-12 \school-header-context">
+										<table class="table col-xs-12">
+											<tr>
+												<th style="text-align: center;"><%:=data.school_name%></th>
+											</tr>
+											<tr>
+												<td>机构类型：<%:=data.school_type%></td>
+											</tr>
+												<td>所属校区：<%:=data.school_address%></td>
+											</tr>
+											<tr>
+												<td>成立时间：<%:=data.school_create_time%></td>
+											</tr>
+											<tr>
+												<td>学校面积：<%:=data.school_space%></td>
+											</tr>
+											<tr>
+												<td>联系电话：<%:=data.tellphone%></td>
+											</tr>
+											<tr>
+												<td>开班课程：<%:=data.school_course%></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<hr>
+							</div>
+							<!--要求-->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="row school-context">
+									<div class="col-xs-12 col-sm-12 col-md-12 school-context-box">
+										<div class="school-context-box-header">
+											<h1>学校简介</h1>
+										</div>
+										<%:=data.content%>
+									</div>
+								</div>
+							</div>
+		
+						</div>
+					</div>
+					<div class="hidden-xs col-sm-3 col-md-3">
+						<div class="row">
+							<!-- <div class="col-xs-12">新闻预留</div> -->
+							<div class="col-xs-12">
+								<img class="img-responsive center-block" src="/image/public/blank.gif" data-echo="/image/hot4.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
 </html>

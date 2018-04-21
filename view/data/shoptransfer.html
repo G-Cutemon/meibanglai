@@ -83,32 +83,32 @@
 								<div class="row">
 									<div class="col-xs-12 col-sm-12 col-md-12">
 										<p style="color: red">
-											<span style="font-size: 2.3rem" id="gold">4500</span>
+											<span style="font-size: 2.3rem" id="gold"><%:=data.rental%></span>
 											<a>元/月&nbsp;&nbsp;&nbsp; 转让费：
-											</a><span id="transferGold">10.8万元</span>
+											</a><span id="transferGold"><%:=data.transfer_gold%></span>
 										</p>
 									</div>
 								</div>
 								<div class="row">
 									<ul class="col-xs-12 context">
-										<li>面积：</li>
-										<li>面宽：</li>
-										<li>层高：</li>
-										<li>进深：</li>
-										<li>楼层：</li>
-										<li>付款方式：</li>
-										<li>类型：</li>
-										<li>剩余租期：</li>
-										<li>经营行业：</li>
-										<li>经营状态：</li>
+										<li>面积：<%:=data.area%></li>
+										<li>面宽：<%:=data.wide%></li>
+										<li>层高：<%:=data.high%></li>
+										<li>进深：<%:=data.depth%></li>
+										<li>楼层：<%:=data.floor%></li>
+										<li>付款方式：<%:=data.payment%></li>
+										<li>类型：<%:=data.type%></li>
+										<li>剩余租期：<%:=data.tenancy%></li>
+										<li>经营行业：<%:=data.manage_business%></li>
+										<li>经营状态：<%:=data.manage_status%></li>
 									</ul>
 								</div>
 								<div class="row">
 									<div class="col-xs-12 col-sm-12 col-md-12 context-x">
 										<hr>
-										<p>所在地址：<span>100m2100m2</span></p>
+										<p>所在地址：<span><%:=data.address%></span></p>
 										<h1 style="font-size: 1.2rem;">联系方式<span> </span></h1>
-										<a><span>陈先生：</span>13111919211</a>
+										<a><span><%:=data.transfer_people%></span><%:=data.people%></a>
 									</div>
 								</div>
 							</div>
