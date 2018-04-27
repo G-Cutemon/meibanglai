@@ -26,16 +26,46 @@
 </body>
 <script id="tpl" type="text/html">
 	<%var DETAIL_PREFIX = '/view/data/invitation.html';%>
-	<table class="table">
+	<div class="container p-l-0 p-r-0">
+	<!--<table class="table">
 		<tr class="warning">
 			<th class="col-xs-6 col-lg-4">职位名称</th>
 			<th class="col-xs-6 col-lg-4">薪资待遇</th>
 			<th class="visible-lg">所在地</th>
 			<th class="visible-lg">发布时间</th>
 			<th></th>
-		</tr>
+		</tr>-->
 		<%for (var i = 0; i < data.length; i++) {%>
-		<tr class="active">
+			<div class="recruit_list m-t2 m-t-5">
+				<div class="row">
+					<ul class="col-xs-12 col-sm-4 col-md-4">
+						<li class="p-10 p-0 f-rem1-6">
+							<a href="<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>" class=" h-c-red"><strong><%:=data[i].jod_name%></strong></a>
+						</li>
+						<li class="p-10 c-ff552e p-0"><strong class="f-s18"><%:=data[i].treatment_leve%></strong></li>
+						<li class="p-10 p-0">
+							<span class="bg-ccc c-6c95ba">五险一金</span>
+							<span class="bg-ccc c-6c95ba">包吃住</span>
+							<span class="bg-ccc c-6c95ba">住房补</span>
+							<span class="bg-ccc c-6c95ba">交通补助</span>
+						</li>
+					</ul>
+					<ul class="col-xs-8 col-sm-4 col-md-4">
+						<li class="p-10 c-999 p-0 f-rem08">美容 | 养颜 | 养生 | 不限</li>
+						<li class="p-10 p-0 f-rem08 m-t-1">
+							<a href="" class="h-c-red"><%:=data[i].company_name%></a>
+						</li>
+			
+					</ul>
+					<ul class="col-xs-4 col-sm-4 col-md-4 m-t-10">
+						<li class="p-10 p-0">
+							<button class="btn btn-danger m-qm f-rem05 p-5" onclick="window.location.href='<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>'">查看职位</button>
+						</li>
+					</ul>
+				</div>
+			
+			</div>	
+		<!--<tr class="active">
 			<td>
 				<span><%:=data[i].jod_name%></span>
 				<span><%:=data[i].company_name%></span>
@@ -56,10 +86,11 @@
 			</td>
 			<td>
 				<button class="btn btn-primary" onclick="window.location.href='<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>'">查看职位</button>
-			</td>
+			</td>-->
 			<%}%>
-		</tr>
-	</table>
+		<!--</tr>
+	</table>-->
+	</div>
 	<hr>
 </script>
 </html>

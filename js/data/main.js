@@ -123,7 +123,7 @@ var ajaxTest = function(num){
 //							$("#pagination-top").whjPaging("getPage");
 							$("#pagination-top").whjPaging("setPage", n, total);
 							$("#pagination-bottom").whjPaging("setPage", n, total);
-							$("#pagination-bottom .whj_hover").click(function() {
+							$("#pagination-bottom").find('.whj_hover').click(function() {
 								$("html,body").animate({
 									scrollTop: 0
 								}, 500);
@@ -136,7 +136,7 @@ var ajaxTest = function(num){
             };
             $("#pagination-top").whjPaging(options);
             $("#pagination-bottom").whjPaging(options);
-            $("#pagination-bottom .whj_hover").click(function() {
+            $("#pagination-bottom").find('.whj_hover').click(function() {
             	$("html,body").animate({
             		scrollTop: 0
             	}, 500);

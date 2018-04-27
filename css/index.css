@@ -1,4 +1,8 @@
 /* PC端样式 */
+.w1190 {
+	width: 1190px;
+	margin: 0 auto;
+}
 
 .index-hotimage .nav {
 	position: absolute;
@@ -11,6 +15,118 @@
 .index-hotimage .nav strong {
 	font-size: 40px;
 	color: #fff;
+}
+
+.sw-slides .sw-slide img {
+	cursor: pointer;
+}
+
+/* 临时用旧样式 */
+
+.hot-section {
+	/*盒子 居中*/
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+	/*相对定位*/
+	height: auto;
+}
+
+.hot-top {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin-bottom: 10px;
+	width: 100%;
+	color: #ececec;
+	height: auto;
+}
+
+.hot-1 {
+	overflow: hidden;
+	white-space: nowrap;
+	width: 45%;
+	height: 100%;
+	text-overflow: ellipsis;
+	margin-right: 30px;
+	margin-left: 30px;
+	padding-bottom: 30px;
+}
+
+.hot-2 {
+	width: 45%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-right: 30px;
+	margin-left: 30px;
+	padding-bottom: 30px;
+	height: 100%;
+}
+
+.hot-1-1 {
+	overflow: hidden;
+	margin-top: 15px;
+	margin-left: 1px;
+	width: 99%;
+	height: auto;
+	box-shadow: 1px 1px 3px 1px #6d6d6d;
+	background-color: #f9f9f9;
+}
+
+.hot-2-1 {
+	overflow: hidden;
+	margin-top: 15px;
+	margin-left: 1px;
+	width: 99%;
+	height: auto;
+	box-shadow: 1px 1px 3px 1px #6d6d6d;
+	background-color: #f9f9f9;
+}
+
+.hot-h {
+	font-size: 18px;
+	line-height: 40px;
+	font-weight: bolder;
+	width: 100%;
+	padding-left: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 1px 1px 0px 0px #e1e1e1;
+	margin-bottom: 10px;
+}
+
+.hot-p {
+	margin-left: 50px;
+	margin-bottom: 10px;
+	color: #6e6e6e;
+	width: 100%;
+	height: 27px;
+}
+
+.hot-p-hot {
+	margin-left: 50px;
+	margin-bottom: 10px;
+	color: #ff2d9d;
+	width: 100%;
+	height: 27px;
+}
+
+.hot-p>a {
+	color: black;
+	margin-left: 27px;
+}
+
+.hot-p-hot>a {
+	margin-top: 10px;
+	margin-left: 27px;
+}
+
+.hot-p-hot>a>font {
+	color: #ff2d9d;
+}
+
+.hot-p-hot>img {
+	width: 27px;
+	height: 27px;
 }
 
 /* 手机端样式 */
@@ -53,13 +169,13 @@
 }
 
 .hot2 {
-	background: url(/image/hot2.png);
-	background-size: contain;
+	background: url(/image/hot2.png) no-repeat;
+	background-size: cover;
 }
 
 .hot3 {
-	background: url(/image/hot3.png);
-	background-size: contain;
+	background: url(/image/hot3.png) no-repeat;
+	background-size: cover;
 }
 
 .l-hot img {

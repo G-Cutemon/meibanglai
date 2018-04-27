@@ -45,27 +45,50 @@
 <script id="tpl" type="text/html">
 	<%var LOGO_URL = '//meibanglai.com/image/school/';%>
 	<%var DETAILS_URL = '/view/data/school.html';%>
-	<table class="table table2_1">
+	<!--<table class="table table2_1">
 		<tr class="warning">
 			<th class="col-xs-6 col-lg-4">学校名称</th>
 			<th class="col-xs-6 col-lg-4">培训科目</th>
 			<th class="visible-lg">所在地址</th>
 			<th class="visible-lg">成立时间</th>
 			<th class="visible-lg">学校Logo</th>
-		</tr>
+		</tr>-->
 	<%for (var i = 0; i < data.length; i++) {%>
-		<tr>
+		<div class="list">
+			<div class="sort">
+				<ul class="clearfix">
+					<li class="fl one">
+						<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src='<%:=LOGO_URL%><%:=data[i].logo_url%>' alt='<%:=data[i].school_name%>'></a>
+					</li>
+					<li class="fl two">
+						<p>名称：
+							<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><%:=data[i].school_name%></a>
+						</p>
+						<p>学校性质：<%:=data[i].school_type%></p>
+						<p>培训科目：<%:=data[i].school_course%></p>
+						<p>所在地址：<%:=data[i].school_address%></p>
+						<p>成立时间：<%:=data[i].school_create_time%></p>
+					</li>
+					<li class="fl three">
+						<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>" class="f-s13">
+							查看详情
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--<tr>
 			<td>
-				<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>">广州合纵连横化妆品有限公司</a>
-			<span>美容美体培训机构/学校</span>
+				<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><%:=data[i].school_name%></a>
+			<span><%:=data[i].school_type%></span>
 			</td>
 			<td><%:=data[i].school_course%></td>
 			<td class="visible-lg"><%:=data[i].school_address%></td>
 			<td class="visible-lg"><%:=data[i].school_create_time%></td>
-			<td class="visible-lg"><a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="width: 160px;height: 120px;"></a></td>
+			<td class="visible-lg"><a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><img src="<%:=LOGO_URL%><%:=data[i].logo_url%>" style="width: 160px;height: 120px;"></a></td>-->
 	<%}%>
-		</tr>
-	</table>
+		<!--</tr>
+	</table>-->
 	<hr>
 </script>
 </html>

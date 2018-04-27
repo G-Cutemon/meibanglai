@@ -41,13 +41,59 @@
 </script>
 <script id="tpl" type="text/html">
 	<%var IMAGE_DELETE_URL = "//meibanglai.com/image/school/";%>
-	<div class="container-fluid box-f">
+	<div class="list-details clearfix">
+		<ul>
+			<li class="details fl">
+				<h2><%:=data.school_name%></h2>
+				<p>机构类型：<%:=data.school_type%></p>
+				<p>联系电话：<span class="contact"><%:=data.tellphone%></span></p>
+				<p>所属校区：<%:=data.school_address%></p>
+				<p>学校面积：<%:=data.school_space%></p>
+				<p>成立时间：<%:=data.school_create_time%></p>
+			</li>
+			<li class="introduce fl">
+				<h2>开班课程</h2>
+				<p><%:=data.school_course%></p>
+				<p>...</p>
+				<p>...</p>
+				<p>...</p>
+				<p>...</p>
+			</li>
+			<li class="company_logo fl">
+				<a href=""><img src="<%:=IMAGE_DELETE_URL%><%:=data.logo_url%>" alt=""></a>
+			</li>
+		</ul>
+	</div>
+	<div class="School_introduction">
+		<h2>学校简介</h2>
+		<p class="indent"><%:=data.content%>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+			<p>.....</p>
+	
+		</p>
+	
+	</div>
+	
+	
+	<!--<div class="container-fluid box-f">
 		<div class="row box-c3">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-9 col-md-9">
 						<div class="row inter-box">
-							<!--标题 公司-->
 							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="row school-header">
 									<div class="hidden-xs col-md-3 school-header-image">
@@ -80,7 +126,6 @@
 								</div>
 								<hr>
 							</div>
-							<!--要求-->
 							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="row school-context">
 									<div class="col-xs-12 col-sm-12 col-md-12 school-context-box">
@@ -96,7 +141,6 @@
 					</div>
 					<div class="hidden-xs col-sm-3 col-md-3">
 						<div class="row">
-							<!-- <div class="col-xs-12">新闻预留</div> -->
 							<div class="col-xs-12">
 								<img class="img-responsive center-block" src="/image/public/blank.gif" data-echo="/image/hot4.png">
 							</div>
@@ -105,6 +149,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </script>
 </html>

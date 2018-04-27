@@ -104,7 +104,7 @@
     .sw-bullet li:hover {
       background-color: rgba(255, 255, 255, 0.74); }
     .sw-bullet li.active {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 0, 0, 0.5);
       box-shadow: 0 0 2px rgba(160, 160, 160, 0.53); }
     .sw-bullet li:not(:last-child) {
       margin-right: 5px; }

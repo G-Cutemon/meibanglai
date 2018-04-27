@@ -68,6 +68,16 @@
 	margin-bottom: 10px;
 }
 
+@media (min-width:992px) {
+    /*.list:first-child{*/
+        /*margin-top:7%;*/
+    /*}*/
+    #pagination-top, #pagination-bottom{
+        width: 1190px;
+        margin: 0 auto;
+    }
+}
+
 .tab-box {
 	width: 190px;
 	height: 200px;

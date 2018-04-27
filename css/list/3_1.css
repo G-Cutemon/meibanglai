@@ -1,0 +1,31 @@
+/*展会信息*/
+.Exhibition_main{
+    width: 1180px;
+    margin:10px auto;
+    padding: 10px;
+}
+.Exhibition_main:hover{
+    background: #F5F7FA;
+}
+.list_a{
+    margin-left: 5%;
+}
+
+.list_a li{
+    padding: 5px;
+    padding-top: 0;
+}
+.list-logo{
+    width: 10%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.list_c{
+    width: 5%;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 10%;
+
+}
