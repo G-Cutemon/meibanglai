@@ -27,21 +27,9 @@
 <script id="tpl" type="text/html">
 	<%var LOGO_URL = '//meibanglai.com/data/dataList.do';%>
 	<%var DETAILS_URL = '/view/data/foreignexhibition.html';%>
-	<!--<table class="table">
-		<tr class="warning">
-			<th class="col-xs-9 col-lg-4">展会名称</th>
-			<th class="visible-lg col-lg-4">展会时间</th>
-			<th class="visible-lg">所在地址</th>
-			<th></th>
-		</tr>-->
 	<%for (var i = 0; i < data.length; i++) {%>
 		<div class="content">
 			<div class="Exhibition_main clearfix">
-				<ul class="list-logo fl">
-					<li>
-						<a href='<%:=DETAILS_URL%>?d=<%:=data[i].id%>'><img src='' alt=''></a>
-					</li>
-				</ul>
 				<ul class="list_a fl">
 					<li>
 						<a href='<%:=DETAILS_URL%>?d=<%:=data[i].id%>'><%:=data[i].meeting_name%></a>
@@ -52,25 +40,12 @@
 				</ul>
 				<ul class="list_c fl">
 					<li>
-						<a href="">北京市</a>
+						<a href="<%:=DETAILS_URL%>?d=<%:=data[i].id%>"><%:=data[i].meeting_area%></a>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<!--<tr>
-			<td>
-				<%:=data[i].meeting_name%>
-			</td>
-			<td class="visible-lg">
-				<%:=data[i].meeting_time%>
-			</td>
-			<td class="visible-lg"><%:=data[i].meeting_adress%></td>
-			<td>
-				<button class="btn btn-primary"  onclick="window.location.href='<%:=DETAILS_URL%>?d=<%:=data[i].id%>'">查看详情</button>
-			</td>-->
 	<%}%>
-		<!--</tr>
-	</table>-->
 	<hr>
 </script>
 </html>

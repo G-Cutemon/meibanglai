@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<div class="fix-box">
+		<!--<div class="fix-box">
 			<div class="w1190">
 				<dl>
 					<dt>便民服务</dt>
@@ -30,30 +30,38 @@
 					</dd>
 				</dl>
 			</div>
-		</div>
+		</div>-->
 
 		<div id="wp"></div>
 	</body>
 	<script id="tpl" type="text/html">
 		<%var IMAGE_URL = '/view/data/details.html';%>
-		<table class="table">
+		<div class="container">
 			<%for (var i = 0; i < data.length; i++) {%>
-			<tr class="active">
-				<td class="col-sm-3">
-					<span><a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a></span>
-					<img src="<%:=data[i].image_url%>" width="160px" height="120px" />
-				</td>
-				<td colspan="8">
-					<span>联系人：<%:=data[i].contact_people%></span>
-					<span>联系电话：<%:=data[i].contact_mobile%></span>
-					<span>传真：<%:=data[i].fax%></span>
-					<span>座机：<%:=data[i].contact_tellphone%></span>
-					<span><%:=data[i].product_name%></span>
-					<span><%:=data[i].product_describe%></span>
-				</td>
-			</tr>
+				<div class="hover-f5">
+					<div class="row row-p m-0 b-bottom-f5 f-s-1rem l-h-2rem">
+						<ul class="hidden-xs col-sm-2 col-md-2 p-0">
+							<li class="logy-img p-r-15"><img src="/image/logo.png" alt=""></li>
+						</ul>
+						<ul class="col-xs-9 col-sm-8 col-md-8 p-0">
+							<li>
+								<a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a>
+							</li>
+							<li>联系人：<%:=data[i].contact_people%></li>
+							<li>联系电话： <%:=data[i].contact_mobile%></li>
+							<li>座机：<%:=data[i].contact_tellphone%></li>
+							<li><%:=data[i].product_name%></li>
+							<li>供<%:=data[i].product_describe%></li>
+						</ul>
+						<ul class="col-xs-3 col-sm-2 col-md-2 p-0 text-center m-t-2">
+							<li>
+								<a href="" class="btn btn-danger btn-sm">联系商家</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			<%}%>
-		</table>
+		</div>
 		<hr />
 	</script>
 

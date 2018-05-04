@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<div class="fix-box">
+		<!--<div class="fix-box">
 			<div class="w1190">
 				<dl>
 					<dt>便民服务</dt>
@@ -30,27 +30,36 @@
 					</dd>
 				</dl>
 			</div>
-		</div>
+		</div>-->
 
 		<div id="wp"></div>
 	</body>
 	<script id="tpl" type="text/html">
 		<%var IMAGE_URL = '/view/data/details.html';%>
-		<table class="table">
+		<div class="container">
 			<%for (var i = 0; i < data.length; i++) {%>
-			<tr class="active">
-				<td class="col-sm-3">
-					<span><a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a></span>
-					<img src="<%:=data[i].image_url%>" width="160px" height="120px" />
-				</td>
-				<td colspan="8">
-					<span>所在地：<%:=data[i].company_adress%></span>
-					<span>主要产品：<%:=data[i].company_product%></span>
-					<span>经营范围：<%:=data[i].company_industry%></span>
-				</td>
-			</tr>
+				<div class="hover-f5">
+					<div class="row row-p m-0 b-bottom-f5 f-s-1rem l-h-2rem">
+						<ul class="hidden-xs col-sm-2 col-md-2 p-0">
+							<li class="logy-img p-r-15"><img src="/image/logo.png" alt=""></li>
+						</ul>
+						<ul class="col-xs-9 col-sm-8 col-md-8 p-0">
+							<li>
+								<a href="<%:=IMAGE_URL%>?d=<%:=data[i].id%>"><%:=data[i].company_name%></a>
+							</li>
+							<li>所在地：<%:=data[i].company_adress%></li>
+							<li>主要产品：<%:=data[i].company_product%></li>
+							<li>经营范围：<%:=data[i].company_industry%></li>
+						</ul>
+						<ul class="col-xs-3 col-sm-2 col-md-2 p-0 text-center m-t-2">
+							<li>
+								<a href="" class="btn btn-danger btn-sm">联系商家</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			<%}%>
-		</table>
+		</div>
 		<hr />
 	</script>
 
