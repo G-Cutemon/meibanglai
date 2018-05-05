@@ -27,16 +27,8 @@
 <script id="tpl" type="text/html">
 	<%var DETAIL_PREFIX = '/view/data/invitation.html';%>
 	<div class="container p-l-0 p-r-0">
-	<!--<table class="table">
-		<tr class="warning">
-			<th class="col-xs-6 col-lg-4">职位名称</th>
-			<th class="col-xs-6 col-lg-4">薪资待遇</th>
-			<th class="visible-lg">所在地</th>
-			<th class="visible-lg">发布时间</th>
-			<th></th>
-		</tr>-->
 		<%for (var i = 0; i < data.length; i++) {%>
-			<div class="recruit_list m-t2 m-t-5">
+			<div class="recruit_list m-tb-10 m-t-5">
 				<div class="row">
 					<ul class="col-xs-12 col-sm-4 col-md-4">
 						<li class="p-10 p-0 f-rem1-6">
@@ -65,31 +57,7 @@
 				</div>
 			
 			</div>	
-		<!--<tr class="active">
-			<td>
-				<span><%:=data[i].jod_name%></span>
-				<span><%:=data[i].company_name%></span>
-			</td>
-			<td>
-				<span><%:=data[i].treatment_leve%></span>
-				<span>
-					<span>五险一金</span>
-					<span>包吃住</span>
-					<span>年终奖</span>
-				</span>
-			</td>
-			<td class="visible-lg">
-				<%:=data[i].jod_release_address%>
-			</td>
-			<td class="visible-lg">
-				<%:=data[i].jod_release_time%>
-			</td>
-			<td>
-				<button class="btn btn-primary" onclick="window.location.href='<%:=DETAIL_PREFIX%>?d=<%:=data[i].id%>'">查看职位</button>
-			</td>-->
-			<%}%>
-		<!--</tr>
-	</table>-->
+		<%}%>
 	</div>
 	<hr>
 </script>

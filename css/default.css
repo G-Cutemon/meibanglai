@@ -255,6 +255,9 @@ li,p,ul {
 .m-t2{
     margin-top: 2%;
 }
+.m-tb-10{
+	margin: 10px auto;
+}
 .m-l-1{
     margin-left: 1%;
 }
@@ -280,7 +283,8 @@ li,p,ul {
 	color: #db047a;
 }
 .bg-ccc{
-    background:lightgrey;
+    border: 1px solid #6c95ba;
+    padding: 2px;
  }
 .bg-f3{
     background: #f3f3f3;
@@ -370,12 +374,13 @@ li,p,ul {
 	line-height: 2rem;
 }
 
+
 .hover-f5:hover {
 	background: #F5F5F5;
 }
 
-.b-bottom-f5 {
-	border-bottom: 1px solid #fff;
+.b-top-f5 {
+	border-top: 1px solid #e6e9ed;
 }
 
 .logy-img img {
@@ -385,6 +390,10 @@ li,p,ul {
 
 .row-p {
 	padding: 15px 10px 2px;
+}
+
+.f-s-015{
+    font-size: 1.5rem;
 }
 
 /* 全局设置结束 */
@@ -408,7 +417,7 @@ li,p,ul {
 .list .sort{
     width: 100%;
     background: #fff;
-    border-bottom: solid 1px #e6e9ed;
+    border-top: solid 1px #e6e9ed;
     cursor: pointer;
 }
 .list .sort ul{
@@ -488,6 +497,7 @@ li,p,ul {
     width: 1180px;
     margin:10px auto;
     padding: 10px;
+    border-top: solid 1px #e6e9ed;
 }
 .Exhibition_main:hover{
     background: #F5F7FA;
@@ -516,11 +526,15 @@ li,p,ul {
 
 /*招聘信息*/
 .recruit_list{
-    border-bottom: 6px solid #f3f3f3;
+    border-top: solid 1px #e6e9ed;
     padding: .4rem .6rem 0;
+    line-height: 30px;
 }
 .recruit_list :hover{
     background: #F5F7FA;
+}
+.recruit_list .row{
+    padding: 2px;
 }
 
 /*招聘详情页*/
@@ -653,6 +667,22 @@ li,p,ul {
 	outline: none;
 }
 
+/*物流详情页*/
+.logistics-img{
+    width: 100%;
+    height: 115px;
+}
+.logistics-content{
+    border-bottom:2px solid #fff;
+    background: floralwhite;
+    padding:8px;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+.logistics-content:hover{
+
+    background:burlywood;
+}
 
 
 @media (max-width:320px) {
