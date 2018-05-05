@@ -276,6 +276,9 @@ li,p,ul {
 .c-red{
     color: red;
 }
+.c-DD20 {
+    color: #DD201D;
+}
 .c-fff{
     color: #fff;
 }
@@ -646,7 +649,7 @@ li,p,ul {
 	line-height: 58px;
 	border: none;
 	font-size: 16px;
-	cursor: pointer !important;
+	/*cursor: pointer !important;*/
 	background: none;
 }
 
@@ -681,7 +684,7 @@ li,p,ul {
 }
 .logistics-content:hover{
 
-    background:burlywood;
+    background: wheat;
 }
 
 

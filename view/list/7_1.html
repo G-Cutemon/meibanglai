@@ -31,14 +31,34 @@
 </body>
 <script src="/js/data/logistics.js" type="text/javascript" charset="utf-8"></script>
 <script id="tpl" type="text/html">
-	<%var DETAILS_URL = '//meibanglai.com/view/matchMessage/';%>
-	<div class="select-area">
+	<div class="container">
+		<div>
+			<div class="search-bar">
+				<label>从</label>
+				<div class="input-wrap input-wrap-539">
+					<span id="startCity"><input type="text" value="广州" id="start" name=""></span>
+					<input type="text" placeholder="输入寄件人地址" id="startAddr">
+				</div>
+				<label>到</label>
+				<div class="input-wrap">
+					<span id="endCity"><input type="text" value="" id="end" name=""></span>
+					<input type="text" placeholder="输入收件人地址" id="endAddr">
+				</div>
+				<button class="wl-btn search-btn ss-btn wl-btn-768" id="search">搜索</button>
+	
+			</div>
+			<!-- 城市 -->
+			<div id="in_city" style="display: none"></div>
+		</div>
+	</div>
+	
+	<!--<div class="select-area">
 		<div class="area">
 			<img src="/image/public/end.png"><input type="text" id="start" placeholder="出发地" value="广州"><img src="/image/public/start-end.png"><img src="/image/public/start.png"><input type="text" id="end" placeholder="到达地">
 			<button id="search" class="btn btn-info" >搜索</button>
 			<span class="hidden-xs">只输入一个也可以~</span>
 		</div>
-	</div>
+	</div>-->
 
 	
 </script>
@@ -46,9 +66,30 @@
 <script id="result-tpl" type="text/html">
 	<%var IMAGE_URL = '//meibanglai.com/image/logistics/';%>
 	<%var DEFAULT_IMAGE = IMAGE_URL + 'default.png';%>
-	<table class="table">
+	<div class="container">
 		<%for (var i = 0; i < data.length; i++) {%>
-			<tr class="active">
+			<div class="logistics-content">
+				<div class="row">
+					<ul class="col-xs-8 col-sm-5 col-md-5 f-s-1rem f-s-015 p-05">
+						<li>
+							公司名称：<%:=data[i].company_name%>
+						</li>
+						<li>地址：<%:=data[i].address%></li>
+						<li class="c-DD20">联系人：<%:=data[i].principal%></li>
+						<li class="c-DD20">电话：<%:=data[i].phone%></li>
+						<li>发货热线：<%:=data[i].telephone%></span></li>
+			
+					</ul>
+					<ul class="hidden-xs col-sm-5 col-md-5 f-s-1rem f-s-015">
+						<li>货运市场：<%:=data[i].market%></li>
+						<li>出发站：<%:=data[i].start_site%></li>
+						<li>到达地：<%:=data[i].end_site%></span></li>
+						<li>发布时间：<%:=formatDate(data[i].updata_time)%></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--<tr class="active">
 				<td class="visible-lg col-lg-3">
 					<img src="<%:=data[i].logo_url=="" ? DEFAULT_IMAGE : data[i].logo_url%>"/>
 				</td>
@@ -63,9 +104,9 @@
 					<span>到达地：<%:=data[i].end_site%></span>
 					<span>发布时间：<%:=formatDate(data[i].updata_time)%></span>
 				</td>
-			</tr>
+			</tr>-->
 		<%}%>
-	</table>
+	</div>
 	<hr />
 </script>
 </html>
